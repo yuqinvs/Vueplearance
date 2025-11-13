@@ -1,42 +1,100 @@
-# .
+# Plearance - 優雅なひだ
 
-This template should help get you started developing with Vue 3 in Vite.
+An independent designer brand inspired by the art of pleats, reimagined as a high-end minimalist Vue.js application.
 
-## Recommended IDE Setup
+## 🎨 Design Philosophy
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+This project transforms the original static website into a sophisticated digital experience that embodies:
 
-## Recommended Browser Setup
+- **High-End Minimalism**: Classic black & white palette with subtle gray-blue accents
+- **Editorial Layout Design**: Magazine-style asymmetric grids with generous negative space
+- **Art Gallery Aesthetic**: Each page flows like a curated exhibition
+- **Immersive Storytelling**: Brand narrative unfolds through visual hierarchy and typography
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## 🏗️ Technical Architecture
 
-## Type Support for `.vue` Imports in TS
+- **Vue 3 + TypeScript**: Modern, type-safe development
+- **Vue Router**: Seamless single-page application navigation
+- **Vite**: Lightning-fast build tool and development server
+- **Responsive Design**: Mobile-first approach with desktop refinement
+- **Performance Optimized**: Efficient build system and asset management
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## ✨ Key Features
 
-## Customize configuration
+### Design System
+- **Typography**: Crimson Text (serif) for headings, Inter (sans-serif) for body text
+- **Color Palette**: Monochromatic with strategic accent colors
+- **Layout Grid**: Asymmetrical editorial layouts with pleat-inspired animations
+- **Interactive Elements**: Subtle hover effects mimicking fabric movement
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### User Experience
+- **Parallax Scrolling**: Immersive depth through layered content
+- **Scroll Animations**: Elements reveal as user navigates
+- **Brand Letter Interactions**: Playful typography on brand name
+- **Contact Form**: Integrated with validation and status feedback
 
-## Project Setup
+## 🚀 Getting Started
 
-```sh
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+```bash
+# Clone the repository
+git clone [repository-url]
+
+# Navigate to project directory
+cd plearance
+
+# Install dependencies
 npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
+# Start development server
 npm run dev
-```
 
-### Type-Check, Compile and Minify for Production
-
-```sh
+# Build for production
 npm run build
 ```
+
+## 📁 Project Structure
+
+```
+src/
+├── assets/           # Global styles and static assets
+├── components/       # Reusable Vue components
+│   ├── Navigation.vue
+│   └── Footer.vue
+├── router/          # Vue Router configuration
+├── views/           # Page components
+│   ├── Home.vue
+│   ├── BrandStory.vue
+│   ├── Products.vue
+│   ├── Store.vue
+│   └── Contacts.vue
+└── main.ts          # Application entry point
+```
+
+## 🎭 Brand Story
+
+Plearance represents the fusion of "Pleats" and "Elegance" - a brand founded by Yui Nakahara, 
+formerly of ISSEY MIYAKE's PLEATS PLEASE division. The website captures her philosophy of 
+creating garments where "pleats and structure bring garments to life."
+
+## 🌐 Deployment
+
+The application is built with Vite and can be deployed to various hosting platforms:
+- Vercel
+- Netlify
+- GitHub Pages
+- Any static hosting service
+
+## 📄 License
+
+This project is a demonstration of modern web development techniques applied to fashion brand design.
+
+## 🙏 Acknowledgments
+
+- Design inspiration from Japanese minimalist fashion brands
+- Typography: Crimson Text and Inter from Google Fonts
+- Built with Vue.js ecosystem tools and best practices
