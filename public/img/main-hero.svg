@@ -1,0 +1,18 @@
+<!-- SVG placeholder for main hero image -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5f5f5;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#e0e0e0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d0d0d0;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="pleatPattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M0,50 Q25,30 50,50 T100,50" stroke="#ccc" stroke-width="1" fill="none" opacity="0.3"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="800" fill="url(#heroGradient)"/>
+  <rect width="1200" height="800" fill="url(#pleatPattern)"/>
+  <text x="600" y="400" font-family="Crimson Text, serif" font-size="48" text-anchor="middle" fill="#333" opacity="0.1">
+    Plearance
+  </text>
+</svg>
