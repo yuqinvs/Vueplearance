@@ -1,20 +1,20 @@
 # Cloudflare Pages Configuration
-# This project is configured for Cloudflare Pages, not Workers
+# This configuration is for Cloudflare Pages, not Workers
 
 name = "vueplearance"
 compatibility_date = "2025-11-14"
-
-# Pages configuration
-[site]
-bucket = "dist"
 
 # Build configuration
 [build]
 command = "npm run build"
 
-# Disable Workers features
-main = ""
+# Pages configuration - this tells Cloudflare this is a Pages project
+[site]
+bucket = "dist"
 
-# Asset configuration
+# Asset configuration for static files
 [assets]
 directory = "dist"
+
+# Disable Workers features since this is a static site
+main = ""
