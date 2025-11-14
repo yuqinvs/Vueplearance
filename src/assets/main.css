@@ -1,7 +1,7 @@
 /* High-End Minimalist Design System for Plearance */
 
 /* Typography System */
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Sans+Arabic:wght@300;400;500;600&family=Noto+Naskh+Arabic:wght@400;500;600&display=swap');
 
 :root {
   /* Color Palette - Classic Black & White with subtle accent */
@@ -52,6 +52,8 @@ body {
   color: var(--color-primary);
   background-color: var(--color-secondary);
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 /* Typography Classes */
@@ -106,6 +108,8 @@ body {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--space-md);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .grid-asymmetric {
@@ -113,6 +117,7 @@ body {
   grid-template-columns: 1fr 2fr;
   gap: var(--grid-gap);
   align-items: center;
+  width: 100%;
 }
 
 .grid-reverse {
@@ -124,6 +129,7 @@ body {
   grid-template-columns: repeat(12, 1fr);
   gap: var(--space-md);
   align-items: start;
+  width: 100%;
 }
 
 /* Spacing Utilities */
@@ -352,6 +358,44 @@ body {
   .container-minimal {
     padding: 0 var(--space-sm);
   }
+  
+  /* Mobile Overflow Protection */
+  * {
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+  
+  img, video, iframe {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+  
+  pre, code {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
+  
+  /* Prevent horizontal overflow */
+  .container-minimal,
+  .grid-asymmetric,
+  .grid-reverse,
+  .grid-editorial {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
 }
 
 /* Scroll Animations */
@@ -386,4 +430,138 @@ body {
 .slide-in-right.visible {
   opacity: 1;
   transform: translateX(0);
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .text-body,
+[dir="rtl"] .text-caption,
+[dir="rtl"] .heading-hero,
+[dir="rtl"] .heading-display,
+[dir="rtl"] .heading-large {
+  text-align: right;
+}
+
+[dir="rtl"] .grid-asymmetric {
+  grid-template-columns: 2fr 1fr;
+}
+
+[dir="rtl"] .grid-reverse {
+  grid-template-columns: 1fr 2fr;
+}
+
+[dir="rtl"] .editorial-text {
+  grid-column: 8 / span 5;
+}
+
+[dir="rtl"] .editorial-image {
+  grid-column: 1 / span 7;
+}
+
+[dir="rtl"] .nav-link::after {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .slide-in-left {
+  transform: translateX(50px);
+}
+
+[dir="rtl"] .slide-in-left.visible {
+  transform: translateX(0);
+}
+
+[dir="rtl"] .slide-in-right {
+  transform: translateX(-50px);
+}
+
+[dir="rtl"] .slide-in-right.visible {
+  transform: translateX(0);
+}
+
+/* Arabic font support */
+[dir="rtl"] .text-serif,
+[dir="rtl"] .heading-hero,
+[dir="rtl"] .heading-display,
+[dir="rtl"] .heading-large,
+[dir="rtl"] .brand-name {
+  font-family: 'Crimson Text', 'Noto Naskh Arabic', serif;
+}
+
+[dir="rtl"] .text-sans,
+[dir="rtl"] .text-body,
+[dir="rtl"] .text-caption,
+[dir="rtl"] .nav-link,
+[dir="rtl"] .btn-minimal {
+  font-family: 'Inter', 'Noto Sans Arabic', sans-serif;
+}
+
+/* RTL Mobile Support */
+@media (max-width: 768px) {
+  [dir="rtl"] .container-minimal {
+    padding-right: var(--space-sm);
+    padding-left: var(--space-sm);
+  }
+  
+  [dir="rtl"] .grid-asymmetric,
+  [dir="rtl"] .grid-reverse {
+    grid-template-columns: 1fr;
+  }
+  
+  [dir="rtl"] .editorial-text,
+  [dir="rtl"] .editorial-image {
+    grid-column: span 12;
+  }
+  
+  [dir="rtl"] .slide-in-left {
+    transform: translateX(50px);
+  }
+  
+  [dir="rtl"] .slide-in-left.visible {
+    transform: translateX(0);
+  }
+  
+  [dir="rtl"] .slide-in-right {
+    transform: translateX(-50px);
+  }
+  
+  [dir="rtl"] .slide-in-right.visible {
+    transform: translateX(0);
+  }
+  
+  /* RTL Input Support */
+  [dir="rtl"] input,
+  [dir="rtl"] textarea,
+  [dir="rtl"] select {
+    text-align: right;
+    direction: rtl;
+  }
+  
+  [dir="rtl"] input::placeholder,
+  [dir="rtl"] textarea::placeholder {
+    text-align: right;
+  }
+  
+  /* RTL Button Support */
+  [dir="rtl"] .btn-minimal {
+    text-align: center;
+  }
+  
+  /* RTL Link Support */
+  [dir="rtl"] a {
+    direction: rtl;
+  }
+  
+  /* RTL Grid Layout Support */
+  [dir="rtl"] .grid-asymmetric {
+    grid-template-columns: 1fr;
+  }
+  
+  [dir="rtl"] .grid-reverse {
+    grid-template-columns: 1fr;
+  }
 }

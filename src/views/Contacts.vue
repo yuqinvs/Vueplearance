@@ -122,7 +122,19 @@
               </div>
             </div>
             <div class="location-map">
-              <div class="map-placeholder"></div>
+              <div class="map-embed">
+                <iframe 
+                  src="https://www.google.com/maps?q=%50%6C%65%61%72%61%6E%63%65%E5%84%AA%E9%9B%85%E3%81%AA%E3%81%B2%E3%81%A0&amp;output=embed"
+                  width="100%" 
+                  height="400" 
+                  style="border:0; border-radius: 8px;" 
+                  allowfullscreen 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="Plearance Tokyo Flagship Store Location"
+                >
+                </iframe>
+              </div>
               <div class="map-overlay">
                 <p class="text-body">
                   Our flagship store is located in the heart of Tokyo's Marunouchi district, 
@@ -300,29 +312,57 @@ const handleSubmit = async () => {
   submitStatus.value = null
   
   try {
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
+    // Create FormData object for Formspree submission
+    const formData = new FormData()
+    formData.append('name', form.value.name)
+    formData.append('email', form.value.email)
+    formData.append('subject', form.value.subject)
+    formData.append('phone', form.value.phone)
+    formData.append('message', form.value.message)
     
-    // In a real application, you would send this to your backend
-    console.log('Form submitted:', form.value)
-    
-    submitStatus.value = {
-      type: 'success',
-      message: 'Thank you for your message! We\'ll get back to you within 24 hours.'
+    // Submit to Formspree using environment variable
+    const formId = import.meta.env.VITE_FORMSPREE_FORM_ID
+    if (!formId || formId === 'your-form-id') {
+      throw new Error('Formspree form ID not configured. Please set VITE_FORMSPREE_FORM_ID in your .env file.')
     }
     
-    // Reset form
-    form.value = {
-      name: '',
-      email: '',
-      subject: '',
-      phone: '',
-      message: ''
+    const response = await fetch(`https://formspree.io/f/${formId}`, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    
+    if (response.ok) {
+      submitStatus.value = {
+        type: 'success',
+        message: 'Thank you for your message! We\'ll get back to you within 24 hours.'
+      }
+      
+      // Reset form
+      form.value = {
+        name: '',
+        email: '',
+        subject: '',
+        phone: '',
+        message: ''
+      }
+    } else {
+      throw new Error('Form submission failed')
     }
   } catch (error) {
+    let errorMessage = 'Sorry, there was an error sending your message. Please try again.'
+    
+    if (error instanceof Error && error.message.includes('Formspree form ID not configured')) {
+      errorMessage = error.message
+    } else if (error instanceof Error && error.message.includes('Failed to fetch')) {
+      errorMessage = 'Network error. Please check your internet connection and try again.'
+    }
+    
     submitStatus.value = {
       type: 'error',
-      message: 'Sorry, there was an error sending your message. Please try again.'
+      message: errorMessage
     }
   } finally {
     isSubmitting.value = false
@@ -453,26 +493,18 @@ onUnmounted(() => {
   position: relative;
 }
 
-.map-placeholder {
+.map-embed {
   width: 100%;
   height: 400px;
-  background: linear-gradient(135deg, var(--color-gray-light) 0%, var(--color-gray-medium) 100%);
   border-radius: 8px;
-  position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.map-placeholder::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" fill="%23ccc" opacity="0.5"/><circle cx="12" cy="10" r="3" fill="%238B9DC3"/></svg>');
-  background-size: 100px 100px;
-  background-position: center;
-  background-repeat: no-repeat;
+.map-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 .map-overlay {
@@ -604,13 +636,129 @@ onUnmounted(() => {
     grid-column: span 1;
   }
   
-  .map-placeholder {
+  .map-embed {
     height: 250px;
+    width: 100%;
+    overflow: hidden;
   }
   
   .contact-item,
   .faq-item {
     padding: 1.5rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Mobile overflow protection */
+  .contact-info,
+  .location-content,
+  .form-content,
+  .faq-content {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  .contact-details,
+  .address-info {
+    width: 100%;
+  }
+  
+  .contact-details a,
+  .address-info a {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Form mobile overflow protection */
+  .form-input,
+  .form-select,
+  .form-textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* RTL Support */
+[dir="rtl"] .contact-info,
+[dir="rtl"] .location-content,
+[dir="rtl"] .form-content,
+[dir="rtl"] .faq-content {
+  text-align: right;
+}
+
+[dir="rtl"] .contact-grid,
+[dir="rtl"] .location-grid,
+[dir="rtl"] .form-grid,
+[dir="rtl"] .faq-grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .feature-list li {
+  padding-left: 0;
+  padding-right: 1.5rem;
+}
+
+[dir="rtl"] .feature-list li::before {
+  left: auto;
+  right: 0;
+  content: '←';
+}
+
+[dir="rtl"] .faq-item {
+  border-left: none;
+  border-right: 3px solid var(--color-accent);
+}
+
+[dir="rtl"] .faq-item:hover {
+  transform: translateX(-10px);
+}
+
+/* RTL Form Support */
+[dir="rtl"] .form-group label {
+  text-align: right;
+}
+
+[dir="rtl"] .form-input,
+[dir="rtl"] .form-select,
+[dir="rtl"] .form-textarea {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .form-input::placeholder,
+[dir="rtl"] .form-textarea::placeholder {
+  text-align: right;
+}
+
+/* RTL Mobile Support */
+@media (max-width: 768px) {
+  [dir="rtl"] .contact-info,
+  [dir="rtl"] .location-content,
+  [dir="rtl"] .form-content,
+  [dir="rtl"] .faq-content {
+    text-align: right;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  
+  [dir="rtl"] .contact-item,
+  [dir="rtl"] .faq-item {
+    text-align: right;
+  }
+  
+  [dir="rtl"] .contact-details,
+  [dir="rtl"] .address-info {
+    text-align: right;
+  }
+  
+  [dir="rtl"] .form-group {
+    text-align: right;
+  }
+  
+  [dir="rtl"] .map-overlay {
+    text-align: right;
   }
 }
 </style>

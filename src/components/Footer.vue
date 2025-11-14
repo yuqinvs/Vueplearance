@@ -205,15 +205,79 @@
     flex-direction: column;
     gap: 1rem;
     text-align: center;
+    width: 100%;
+    max-width: 100vw;
   }
   
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+    width: 100%;
+    max-width: 100vw;
   }
   
   .footer-brand {
     text-align: left;
+  }
+  
+  .footer-minimal {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  .footer-section {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .footer-link {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .footer-address {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+/* RTL Support */
+[dir="rtl"] .connect-content {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer-grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .footer-brand {
+  text-align: center;
+}
+
+[dir="rtl"] .footer-copyright {
+  text-align: center;
+}
+
+/* RTL Mobile Support */
+@media (max-width: 768px) {
+  [dir="rtl"] .connect-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  [dir="rtl"] .footer-brand {
+    text-align: right;
+  }
+  
+  [dir="rtl"] .social-links {
+    justify-content: center;
+  }
+  
+  [dir="rtl"] .footer-minimal {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
   }
 }
 </style>

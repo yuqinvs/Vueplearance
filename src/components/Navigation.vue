@@ -7,14 +7,15 @@
         </RouterLink>
         
         <div class="nav-menu">
-          <RouterLink to="/" class="nav-link">Home</RouterLink>
-          <RouterLink to="/brand-story" class="nav-link">Brand Story</RouterLink>
-          <RouterLink to="/products" class="nav-link">Products</RouterLink>
-          <RouterLink to="/store" class="nav-link">Store</RouterLink>
-          <RouterLink to="/contacts" class="nav-link">Contact</RouterLink>
+          <RouterLink to="/" class="nav-link">{{ t.home }}</RouterLink>
+          <RouterLink to="/brand-story" class="nav-link">{{ t.brandStory }}</RouterLink>
+          <RouterLink to="/products" class="nav-link">{{ t.products }}</RouterLink>
+          <RouterLink to="/store" class="nav-link">{{ t.store }}</RouterLink>
+          <RouterLink to="/contacts" class="nav-link">{{ t.contact }}</RouterLink>
+          <LanguageSwitcher />
         </div>
         
-        <button class="nav-toggle" @click="toggleMenu" :class="{ active: isMenuOpen }">
+        <button class="nav-toggle" @click="toggleMenu" :class="{ active: isMenuOpen }" aria-label="Toggle menu">
           <span></span>
           <span></span>
           <span></span>
@@ -22,18 +23,27 @@
       </div>
       
       <div class="nav-mobile" :class="{ active: isMenuOpen }">
-        <RouterLink to="/" class="nav-link" @click="closeMenu">Home</RouterLink>
-        <RouterLink to="/brand-story" class="nav-link" @click="closeMenu">Brand Story</RouterLink>
-        <RouterLink to="/products" class="nav-link" @click="closeMenu">Products</RouterLink>
-        <RouterLink to="/store" class="nav-link" @click="closeMenu">Store</RouterLink>
-        <RouterLink to="/contacts" class="nav-link" @click="closeMenu">Contact</RouterLink>
+        <RouterLink to="/" class="nav-link" @click="closeMenu">{{ t.home }}</RouterLink>
+        <RouterLink to="/brand-story" class="nav-link" @click="closeMenu">{{ t.brandStory }}</RouterLink>
+        <RouterLink to="/products" class="nav-link" @click="closeMenu">{{ t.products }}</RouterLink>
+        <RouterLink to="/store" class="nav-link" @click="closeMenu">{{ t.store }}</RouterLink>
+        <RouterLink to="/contacts" class="nav-link" @click="closeMenu">{{ t.contact }}</RouterLink>
+        <div class="nav-mobile-language">
+          <LanguageSwitcher />
+        </div>
       </div>
     </div>
   </nav>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
+import LanguageSwitcher from './LanguageSwitcher.vue'
+import { useLanguageStore } from '@/stores/language'
+import translations from '@/locales/translations'
+
+const languageStore = useLanguageStore()
+const t = computed(() => translations[languageStore.currentLanguage].nav)
 
 const isScrolled = ref(false)
 const isMenuOpen = ref(false)
@@ -65,6 +75,8 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .nav-menu {
@@ -125,6 +137,67 @@ onUnmounted(() => {
   
   .nav-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -6px);
+  }
+  
+  .nav-mobile-language {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-gray-medium);
+  }
+}
+
+/* RTL Support */
+[dir="rtl"] .nav-menu {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .nav-mobile {
+  text-align: right;
+}
+
+[dir="rtl"] .nav-container {
+  flex-direction: row-reverse;
+}
+
+/* RTL Mobile Support */
+@media (max-width: 768px) {
+  [dir="rtl"] .nav-container {
+    flex-direction: row;
+  }
+  
+  [dir="rtl"] .nav-brand {
+    margin-right: 0;
+    margin-left: auto;
+  }
+  
+  [dir="rtl"] .nav-toggle {
+    margin-left: 0;
+    margin-right: auto;
+  }
+  
+  [dir="rtl"] .nav-mobile {
+    text-align: right;
+    padding-right: 0;
+    padding-left: 1rem;
+  }
+  
+  [dir="rtl"] .nav-mobile .nav-link {
+    text-align: right;
+    padding-right: 0;
+    padding-left: 1rem;
+  }
+  
+  [dir="rtl"] .nav-mobile-language {
+    text-align: right;
+  }
+  
+  /* RTL Hamburger Menu Animation */
+  [dir="rtl"] .nav-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 5px);
+  }
+  
+  [dir="rtl"] .nav-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-7px, -6px);
   }
 }
 </style>

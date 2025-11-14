@@ -212,6 +212,9 @@ onUnmounted(() => {
 <style scoped>
 .products-minimal {
   min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .collection-intro {
@@ -389,28 +392,70 @@ onUnmounted(() => {
 }
 
 @media (max-width: 768px) {
+  .products-minimal {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
   .product-category,
   .product-category:nth-child(even) {
     grid-template-columns: 1fr;
     direction: ltr;
+    width: 100%;
+    max-width: 100%;
   }
   
   .category-image {
     height: 250px;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .category-content {
+    width: 100%;
+    max-width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .category-features {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .feature-tag {
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
   
   .craftsmanship-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .craft-item {
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
   
   .cta-buttons {
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    max-width: 100%;
   }
   
-  .craft-item {
-    padding: 1.5rem;
+  .btn-minimal {
+    width: 100%;
+    max-width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 }
 </style>

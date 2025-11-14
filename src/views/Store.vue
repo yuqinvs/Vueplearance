@@ -180,9 +180,6 @@
             bringing structure, movement, and elegance to your everyday life.
           </p>
           <div class="cta-buttons space-y-sm">
-            <a href="mailto:store@plearance.com" class="btn-minimal">
-              Book Appointment
-            </a>
             <RouterLink to="/contacts" class="btn-minimal btn-minimal-inverted">
               Contact Us
             </RouterLink>
