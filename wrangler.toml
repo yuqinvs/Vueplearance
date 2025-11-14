@@ -1,0 +1,10 @@
+# Cloudflare Pages Configuration
+name = "vueplearance"
+compatibility_date = "2025-11-14"
+
+[build]
+command = "npm run build"
+bucket = "dist"
+
+[env.production]
+name = "vueplearance"
