@@ -4,10 +4,10 @@
     <section class="hero-minimal">
       <div class="hero-content fade-in">
         <h1 class="heading-hero text-serif">
-          Contact
+          {{ t.contacts.title }}
         </h1>
         <p class="text-body">
-          Let's connect and create something beautiful
+          {{ t.contacts.subtitle }}
         </p>
       </div>
     </section>
@@ -16,67 +16,67 @@
     <section class="section-editorial">
       <div class="container-minimal">
         <div class="contact-info fade-in">
-          <div class="text-caption">Get in Touch</div>
+          <div class="text-caption">{{ t.contacts.getInTouch }}</div>
           <h2 class="heading-display text-serif space-y-sm">
-            We'd Love to Hear From You
+            {{ t.contacts.weWouldLoveToHear }}
           </h2>
           <div class="contact-grid">
             <div class="contact-item">
-              <h3 class="heading-large text-serif">General Inquiries</h3>
+              <h3 class="heading-large text-serif">{{ t.contacts.generalInquiries }}</h3>
               <div class="contact-details">
                 <p class="text-body">
-                  <strong>Email:</strong><br>
+                  <strong>{{ t.contacts.email }}:</strong><br>
                   <a href="mailto:support@plearance.com">support@plearance.com</a>
                 </p>
                 <p class="text-body">
-                  <strong>Response Time:</strong><br>
-                  Within 24 hours during business days
+                  <strong>{{ t.contacts.responseTime }}:</strong><br>
+                  {{ t.contacts.within24Hours }}
                 </p>
               </div>
             </div>
             
             <div class="contact-item">
-              <h3 class="heading-large text-serif">Store & Appointments</h3>
+              <h3 class="heading-large text-serif">{{ t.contacts.storeAppointments }}</h3>
               <div class="contact-details">
                 <p class="text-body">
-                  <strong>Email:</strong><br>
+                  <strong>{{ t.contacts.email }}:</strong><br>
                   <a href="mailto:store@plearance.com">store@plearance.com</a>
                 </p>
                 <p class="text-body">
-                  <strong>Phone:</strong><br>
+                  <strong>{{ t.contacts.phone }}:</strong><br>
                   +81-3-1234-5678
                 </p>
                 <p class="text-body">
-                  <strong>WhatsApp:</strong><br>
+                  <strong>{{ t.contacts.phone }}:</strong><br>
                   +81-90-1234-5678
                 </p>
               </div>
             </div>
             
             <div class="contact-item">
-              <h3 class="heading-large text-serif">Press & Media</h3>
+              <h3 class="heading-large text-serif">{{ t.contacts.pressMedia }}</h3>
               <div class="contact-details">
                 <p class="text-body">
-                  <strong>Email:</strong><br>
+                  <strong>{{ t.contacts.email }}:</strong><br>
                   <a href="mailto:press@plearance.com">press@plearance.com</a>
                 </p>
                 <p class="text-body">
-                  <strong>High-res Images:</strong><br>
-                  Available upon request
+                  <strong>{{ t.contacts.highResImages }}:</strong><br>
+                  {{ t.contacts.availableUponRequest }}
                 </p>
               </div>
             </div>
             
             <div class="contact-item">
-              <h3 class="heading-large text-serif">Business Inquiries</h3>
+              <h3 class="heading-large text-serif">{{ t.contacts.businessInquiries }}</h3>
               <div class="contact-details">
                 <p class="text-body">
-                  <strong>Email:</strong><br>
+                  <strong>{{ t.contacts.email }}:</strong><br>
                   <a href="mailto:business@plearance.com">business@plearance.com</a>
                 </p>
                 <p class="text-body">
-                  <strong>Partnerships:</strong><br>
-                  Wholesale and collaboration opportunities
+                  <strong>{{ t.contacts.partnerships }}:</strong><br>
+                  {{ t.contacts.wholesaleCollaboration }}
                 </p>
               </div>
             </div>
@@ -89,35 +89,25 @@
     <section class="section-editorial">
       <div class="container-minimal">
         <div class="location-content slide-in-left">
-          <div class="text-caption">Visit Us</div>
+          <div class="text-caption">{{ t.contacts.visitUs }}</div>
           <h2 class="heading-display text-serif space-y-sm">
-            Tokyo Flagship Store
+            {{ t.contacts.tokyoFlagshipStore }}
           </h2>
           <div class="location-grid">
             <div class="location-details">
-              <h3 class="heading-large text-serif">Address</h3>
+              <h3 class="heading-large text-serif">{{ t.contacts.address }}</h3>
               <div class="address-info">
-                <p class="text-body">
-                  <strong>Plearance Tokyo</strong><br>
-                  1 Chome-8-1 Marunouchi<br>
-                  Chiyoda City, Tokyo<br>
-                  100-0005, Japan
-                </p>
-                <p class="text-body">
-                  <strong>Hours:</strong><br>
-                  Monday - Saturday: 11:00 - 20:00<br>
-                  Sunday: 12:00 - 19:00<br>
-                  <em>Closed on national holidays</em>
-                </p>
+                <p class="text-body" v-html="t.contacts.addressDetails"></p>
+                <p class="text-body" v-html="t.contacts.hoursDetails"></p>
               </div>
               <div class="location-features">
-                <h4 class="text-serif">Store Features</h4>
+                <h4 class="text-serif">{{ t.contacts.storeFeatures }}</h4>
                 <ul class="feature-list">
-                  <li>Personal styling consultations</li>
-                  <li>Custom pleating services</li>
-                  <li>Alterations and adjustments</li>
-                  <li>Private shopping appointments</li>
-                  <li>International shipping assistance</li>
+                  <li>{{ t.contacts.personalStylingConsultations }}</li>
+                  <li>{{ t.contacts.customPleatingServices }}</li>
+                  <li>{{ t.contacts.alterationsAdjustments }}</li>
+                  <li>{{ t.contacts.privateShoppingAppointments }}</li>
+                  <li>{{ t.contacts.internationalShipping }}</li>
                 </ul>
               </div>
             </div>
@@ -154,75 +144,75 @@
     <section class="section-editorial">
       <div class="container-minimal">
         <div class="form-content slide-in-right">
-          <div class="text-caption">Send a Message</div>
+          <div class="text-caption">{{ t.contacts.sendMessage }}</div>
           <h2 class="heading-display text-serif space-y-sm">
-            Let's Start a Conversation
+            {{ t.contacts.letsStartConversation }}
           </h2>
           <div class="contact-form">
             <form @submit.prevent="handleSubmit" class="form-grid">
               <div class="form-group">
-                <label for="name">Name *</label>
+                <label for="name">{{ t.contacts.nameLabel }} *</label>
                 <input 
                   type="text" 
                   id="name" 
                   v-model="form.name" 
                   required
                   class="form-input"
-                  placeholder="Your full name"
+                  :placeholder="t.contacts.yourFullName"
                 >
               </div>
               
               <div class="form-group">
-                <label for="email">Email *</label>
+                <label for="email">{{ t.contacts.email }} *</label>
                 <input 
                   type="email" 
                   id="email" 
                   v-model="form.email" 
                   required
                   class="form-input"
-                  placeholder="your.email@example.com"
+                  :placeholder="t.contacts.yourEmail"
                 >
               </div>
               
               <div class="form-group">
-                <label for="subject">Subject *</label>
+                <label for="subject">{{ t.contacts.subject }} *</label>
                 <select id="subject" v-model="form.subject" required class="form-select">
-                  <option value="">Select a subject</option>
-                  <option value="general">General Inquiry</option>
-                  <option value="store">Store Appointment</option>
-                  <option value="custom">Custom Order</option>
-                  <option value="press">Press & Media</option>
-                  <option value="business">Business Partnership</option>
-                  <option value="other">Other</option>
+                  <option value="">{{ t.contacts.selectSubject }}</option>
+                  <option value="general">{{ t.contacts.generalInquiry }}</option>
+                  <option value="store">{{ t.contacts.storeAppointment }}</option>
+                  <option value="custom">{{ t.contacts.customOrder }}</option>
+                  <option value="press">{{ t.contacts.pressMediaContact }}</option>
+                  <option value="business">{{ t.contacts.businessPartnership }}</option>
+                  <option value="other">{{ t.contacts.other }}</option>
                 </select>
               </div>
               
               <div class="form-group">
-                <label for="phone">Phone</label>
+                <label for="phone">{{ t.contacts.phone }}</label>
                 <input 
                   type="tel" 
                   id="phone" 
                   v-model="form.phone"
                   class="form-input"
-                  placeholder="+81-3-1234-5678"
+                  :placeholder="t.contacts.phonePlaceholder"
                 >
               </div>
               
               <div class="form-group full-width">
-                <label for="message">Message *</label>
+                <label for="message">{{ t.contacts.message }} *</label>
                 <textarea 
                   id="message" 
                   v-model="form.message" 
                   required
                   class="form-textarea"
                   rows="6"
-                  placeholder="Please share your thoughts, questions, or how we can help you..."
+                  :placeholder="t.contacts.messagePlaceholder"
                 ></textarea>
               </div>
               
               <div class="form-group full-width">
                 <button type="submit" class="btn-minimal" :disabled="isSubmitting">
-                  {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+                  {{ isSubmitting ? t.contacts.sending : t.contacts.sendButton }}
                 </button>
               </div>
             </form>
@@ -239,24 +229,21 @@
     <section class="section-editorial">
       <div class="container-minimal">
         <div class="faq-content fade-in">
-          <div class="text-caption">Frequently Asked</div>
+          <div class="text-caption">{{ t.contacts.frequentlyAsked }}</div>
           <h2 class="heading-display text-serif space-y-sm">
-            Common Questions
+            {{ t.contacts.commonQuestions }}
           </h2>
           <div class="faq-grid">
             <div class="faq-item">
-              <h3 class="heading-large text-serif">How do I care for pleated garments?</h3>
+              <h3 class="heading-large text-serif">{{ t.contacts.howToCare }}</h3>
               <p class="text-body">
-                Our pleated garments are designed to maintain their shape. We recommend 
-                gentle hand washing or dry cleaning. Never iron directly on pleats. 
-                Detailed care instructions are provided with each purchase.
+                {{ t.contacts.careDesc }}
               </p>
             </div>
             <div class="faq-item">
-              <h3 class="heading-large text-serif">Do you offer international shipping?</h3>
+              <h3 class="heading-large text-serif">{{ t.contacts.doYouShip }}</h3>
               <p class="text-body">
-                Yes, we ship worldwide. Shipping costs and delivery times vary by destination. 
-                All international orders include insurance and tracking.
+                {{ t.contacts.shippingDesc }}
               </p>
             </div>
             <div class="faq-item">
@@ -281,7 +268,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { useLanguageStore } from '@/stores/language'
+import translations from '@/locales/translations'
+import type { Translation } from '@/locales/translations'
+
+const languageStore = useLanguageStore()
+const t = computed(() => translations[languageStore.currentLanguage])
+
+// Helper function to safely access translations
+const getTranslation = () => {
+  return translations[languageStore.currentLanguage]
+}
 
 interface FormData {
   name: string
@@ -321,12 +319,12 @@ const handleSubmit = async () => {
     formData.append('message', form.value.message)
     
     // Submit to Formspree using environment variable
-    const formId = import.meta.env.VITE_FORMSPREE_FORM_ID
-    if (!formId || formId === 'your-form-id') {
-      throw new Error('Formspree form ID not configured. Please set VITE_FORMSPREE_FORM_ID in your .env file.')
+    const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT
+    if (!formspreeEndpoint || formspreeEndpoint === 'https://formspree.io/f/your-form-id') {
+      throw new Error(getTranslation().contacts.formIdError)
     }
     
-    const response = await fetch(`https://formspree.io/f/${formId}`, {
+    const response = await fetch(formspreeEndpoint, {
       method: 'POST',
       body: formData,
       headers: {
@@ -337,7 +335,7 @@ const handleSubmit = async () => {
     if (response.ok) {
       submitStatus.value = {
         type: 'success',
-        message: 'Thank you for your message! We\'ll get back to you within 24 hours.'
+        message: getTranslation().contacts.successMessage
       }
       
       // Reset form
@@ -352,12 +350,12 @@ const handleSubmit = async () => {
       throw new Error('Form submission failed')
     }
   } catch (error) {
-    let errorMessage = 'Sorry, there was an error sending your message. Please try again.'
+    let errorMessage = getTranslation().contacts.errorMessage
     
     if (error instanceof Error && error.message.includes('Formspree form ID not configured')) {
       errorMessage = error.message
     } else if (error instanceof Error && error.message.includes('Failed to fetch')) {
-      errorMessage = 'Network error. Please check your internet connection and try again.'
+      errorMessage = getTranslation().contacts.networkError
     }
     
     submitStatus.value = {

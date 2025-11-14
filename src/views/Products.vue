@@ -4,10 +4,10 @@
     <section class="hero-minimal">
       <div class="hero-content fade-in">
         <h1 class="heading-hero text-serif">
-          Products
+          {{ t.products.title }}
         </h1>
         <p class="text-body">
-          Discover our collection of pleated artistry
+          {{ t.products.subtitle }}
         </p>
       </div>
     </section>
@@ -16,14 +16,12 @@
     <section class="section-editorial">
       <div class="container-minimal">
         <div class="collection-intro fade-in">
-          <div class="text-caption">Collection</div>
+          <div class="text-caption">{{ t.products.allProducts }}</div>
           <h2 class="heading-display text-serif space-y-sm">
-            Every Fold Tells a Story
+            {{ t.products.everyFoldTellsStory }}
           </h2>
           <p class="text-body" style="max-width: 800px; margin: 0 auto;">
-            Our carefully curated collection represents the pinnacle of pleated craftsmanship. 
-            Each piece is designed to transcend seasons, offering timeless elegance through 
-            the transformative power of pleats.
+            {{ t.products.collectionDesc }}
           </p>
         </div>
       </div>
@@ -38,16 +36,14 @@
             <div class="category-image everyday-bg"></div>
             <div class="category-content">
               <div class="text-caption">Category</div>
-              <h3 class="heading-large text-serif">Everyday Essentials</h3>
+              <h3 class="heading-large text-serif">{{ t.products.everydayEssentials }}</h3>
               <p class="text-body">
-                Thoughtfully designed pieces that seamlessly integrate into your daily wardrobe. 
-                These versatile garments combine comfort with sophistication, featuring subtle 
-                pleating that adds texture and movement to classic silhouettes.
+                {{ t.products.everydayDesc }}
               </p>
               <div class="category-features">
-                <span class="feature-tag">Comfort Fit</span>
-                <span class="feature-tag">Breathable Fabric</span>
-                <span class="feature-tag">Easy Care</span>
+                <span class="feature-tag">{{ t.products.comfortFit }}</span>
+                <span class="feature-tag">{{ t.products.breathableFabric }}</span>
+                <span class="feature-tag">{{ t.products.easyCare }}</span>
               </div>
             </div>
           </div>
@@ -57,16 +53,14 @@
             <div class="category-image statement-bg"></div>
             <div class="category-content">
               <div class="text-caption">Category</div>
-              <h3 class="heading-large text-serif">Statement Pieces</h3>
+              <h3 class="heading-large text-serif">{{ t.products.statementPieces }}</h3>
               <p class="text-body">
-                Bold, architectural designs that showcase the dramatic potential of pleating. 
-                These garments are crafted to make an impression, featuring innovative pleat 
-                patterns and sculptural forms that celebrate the artistry of our craft.
+                {{ t.products.statementDesc }}
               </p>
               <div class="category-features">
-                <span class="feature-tag">Architectural Design</span>
-                <span class="feature-tag">Hand-finished</span>
-                <span class="feature-tag">Limited Edition</span>
+                <span class="feature-tag">{{ t.products.architecturalDesign }}</span>
+                <span class="feature-tag">{{ t.products.handFinished }}</span>
+                <span class="feature-tag">{{ t.products.limitedEdition }}</span>
               </div>
             </div>
           </div>
@@ -76,16 +70,14 @@
             <div class="category-image professional-bg"></div>
             <div class="category-content">
               <div class="text-caption">Category</div>
-              <h3 class="heading-large text-serif">Professional Collection</h3>
+              <h3 class="heading-large text-serif">{{ t.products.professionalCollection }}</h3>
               <p class="text-body">
-                Sophisticated pieces designed for the modern professional. These garments 
-                feature refined pleating techniques that add visual interest while maintaining 
-                a polished, workplace-appropriate aesthetic.
+                {{ t.products.professionalDesc }}
               </p>
               <div class="category-features">
-                <span class="feature-tag">Office Ready</span>
-                <span class="feature-tag">Wrinkle Resistant</span>
-                <span class="feature-tag">Travel Friendly</span>
+                <span class="feature-tag">{{ t.products.officeReady }}</span>
+                <span class="feature-tag">{{ t.products.wrinkleResistant }}</span>
+                <span class="feature-tag">{{ t.products.travelFriendly }}</span>
               </div>
             </div>
           </div>
@@ -95,16 +87,14 @@
             <div class="category-image evening-bg"></div>
             <div class="category-content">
               <div class="text-caption">Category</div>
-              <h3 class="heading-large text-serif">Evening Elegance</h3>
+              <h3 class="heading-large text-serif">{{ t.products.eveningElegance }}</h3>
               <p class="text-body">
-                Luxurious pieces designed for special occasions. These garments feature 
-                intricate pleating patterns and premium fabrics that create dramatic 
-                silhouettes perfect for evening events and celebrations.
+                {{ t.products.eveningDesc }}
               </p>
               <div class="category-features">
-                <span class="feature-tag">Premium Fabric</span>
-                <span class="feature-tag">Intricate Pleating</span>
-                <span class="feature-tag">Special Occasion</span>
+                <span class="feature-tag">{{ t.products.premiumFabric }}</span>
+                <span class="feature-tag">{{ t.products.intricatePleating }}</span>
+                <span class="feature-tag">{{ t.products.specialOccasion }}</span>
               </div>
             </div>
           </div>
@@ -116,33 +106,27 @@
     <section class="section-editorial">
       <div class="container-minimal">
         <div class="craftsmanship-content fade-in">
-          <div class="text-caption">Craftsmanship</div>
+          <div class="text-caption">{{ t.products.artOfPerfectPleats }}</div>
           <h2 class="heading-display text-serif space-y-sm">
-            The Art of Perfect Pleats
+            {{ t.products.artOfPerfectPleats }}
           </h2>
           <div class="craftsmanship-grid">
             <div class="craft-item">
-              <h3 class="heading-large text-serif">Fabric Selection</h3>
+              <h3 class="heading-large text-serif">{{ t.products.fabricSelection }}</h3>
               <p class="text-body">
-                We begin with the finest fabrics, each chosen for its ability to hold 
-                a pleat while maintaining its natural drape and movement. Our selection 
-                process is rigorous, ensuring only materials that meet our exacting standards.
+                {{ t.products.fabricSelectionDesc }}
               </p>
             </div>
             <div class="craft-item">
-              <h3 class="heading-large text-serif">Pleat Formation</h3>
+              <h3 class="heading-large text-serif">{{ t.products.pleatFormation }}</h3>
               <p class="text-body">
-                Using state-of-the-art equipment combined with traditional techniques, 
-                each pleat is formed with precision. The process requires perfect timing, 
-                temperature, and pressure to create permanent, beautiful folds.
+                {{ t.products.pleatFormationDesc }}
               </p>
             </div>
             <div class="craft-item">
-              <h3 class="heading-large text-serif">Heat Setting</h3>
+              <h3 class="heading-large text-serif">{{ t.products.heatSetting }}</h3>
               <p class="text-body">
-                The final step involves carefully controlled heat setting that locks 
-                each pleat into place. This ensures that your garment will maintain 
-                its beautiful structure wash after wash, wear after wear.
+                {{ t.products.heatSettingDesc }}
               </p>
             </div>
           </div>
@@ -155,20 +139,14 @@
       <div class="container-minimal">
         <div class="cta-section fade-in">
           <h2 class="heading-display text-serif space-y-sm">
-            Experience Plearance
+            {{ t.products.experiencePlearance }}
           </h2>
           <p class="text-body" style="max-width: 600px; margin: 0 auto;">
-            Each Plearance piece is more than just clothing — it's a work of art 
-            that celebrates the beauty of structure and the poetry of movement. 
-            Discover how pleats can transform not just fabric, but how you feel 
-            in your clothes.
+            {{ t.products.experienceDesc }}
           </p>
           <div class="cta-buttons space-y-sm">
-            <RouterLink to="/store" class="btn-minimal">
-              Visit Our Store
-            </RouterLink>
-            <RouterLink to="/contacts" class="btn-minimal btn-minimal-inverted">
-              Schedule Consultation
+            <RouterLink to="/store" class="btn-minimal btn-minimal-inverted">
+              {{ t.products.visitStore }}
             </RouterLink>
           </div>
         </div>
@@ -178,8 +156,13 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted } from 'vue'
+import { onMounted, onUnmounted, computed } from 'vue'
 import { RouterLink } from 'vue-router'
+import { useLanguageStore } from '@/stores/language'
+import translations from '@/locales/translations'
+
+const languageStore = useLanguageStore()
+const t = computed(() => translations[languageStore.currentLanguage])
 
 // Scroll animation handler
 const handleScroll = () => {

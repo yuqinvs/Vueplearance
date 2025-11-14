@@ -9,7 +9,7 @@
       <span class="dropdown-arrow">▼</span>
     </button>
     
-    <div class="language-dropdown" v-if="isOpen">
+    <div class="language-dropdown" v-if="isOpen" ref="dropdownRef">
       <button
         v-for="lang in languages"
         :key="lang"
@@ -24,23 +24,75 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, nextTick } from 'vue'
 import { useLanguageStore } from '@/stores/language'
 import translations from '@/locales/translations'
 import type { Language } from '@/stores/language'
 
 const languageStore = useLanguageStore()
 const isOpen = ref(false)
+const dropdownRef = ref<HTMLElement | null>(null)
 
 const languages: Language[] = ['en', 'zh', 'ja', 'vi', 'ms', 'fr', 'ar']
 
 const toggleDropdown = () => {
   isOpen.value = !isOpen.value
+  if (isOpen.value) {
+    // Check scroll position after DOM update
+    nextTick(() => {
+      checkScrollPosition()
+      // Add scroll event listener
+      if (dropdownRef.value) {
+        dropdownRef.value.addEventListener('scroll', handleScroll)
+      }
+    })
+  } else {
+    // Remove scroll event listener when dropdown closes
+    if (dropdownRef.value) {
+      dropdownRef.value.removeEventListener('scroll', handleScroll)
+    }
+  }
 }
 
 const changeLanguage = (lang: Language) => {
   languageStore.setLanguage(lang)
   isOpen.value = false
+}
+
+const checkScrollPosition = () => {
+  if (!dropdownRef.value) return
+  
+  const element = dropdownRef.value
+  const scrollTop = element.scrollTop
+  const scrollHeight = element.scrollHeight
+  const clientHeight = element.clientHeight
+  
+  // Check if content is scrollable
+  const isScrollable = scrollHeight > clientHeight
+  
+  if (isScrollable) {
+    // Show/hide top gradient based on scroll position
+    if (scrollTop > 5) {
+      element.setAttribute('scrollable-top', '')
+    } else {
+      element.removeAttribute('scrollable-top')
+    }
+    
+    // Show/hide bottom gradient based on scroll position
+    if (scrollTop < scrollHeight - clientHeight - 5) {
+      element.setAttribute('scrollable-bottom', '')
+    } else {
+      element.removeAttribute('scrollable-bottom')
+    }
+  } else {
+    // Remove scroll indicators if content is not scrollable
+    element.removeAttribute('scrollable-top')
+    element.removeAttribute('scrollable-bottom')
+  }
+}
+
+const handleScroll = () => {
+  checkScrollPosition()
 }
 
 // Close dropdown when clicking outside
@@ -57,6 +109,10 @@ onMounted(() => {
 
 onUnmounted(() => {
   document.removeEventListener('click', handleClickOutside)
+  // Clean up scroll event listener
+  if (dropdownRef.value) {
+    dropdownRef.value.removeEventListener('scroll', handleScroll)
+  }
 })
 </script>
 
@@ -112,6 +168,44 @@ onUnmounted(() => {
   z-index: 1000;
   min-width: 120px;
   margin-top: 0.5rem;
+  max-height: calc(100vh - 120px); /* Prevent dropdown from going off-screen */
+  overflow-y: auto; /* Enable scrolling when needed */
+  overscroll-behavior: contain; /* Prevent parent scrolling */
+  scrollbar-width: thin; /* Firefox scrollbar styling */
+  scrollbar-color: var(--color-gray-medium) transparent;
+  
+  /* Smooth animation for dropdown */
+  animation: dropdownSlide 0.2s ease-out;
+  transform-origin: top;
+}
+
+@keyframes dropdownSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scaleY(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+/* Custom scrollbar for Webkit browsers */
+.language-dropdown::-webkit-scrollbar {
+  width: 4px;
+}
+
+.language-dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.language-dropdown::-webkit-scrollbar-thumb {
+  background: var(--color-gray-medium);
+  border-radius: 2px;
+}
+
+.language-dropdown::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-dark);
 }
 
 .language-option {
@@ -147,12 +241,51 @@ onUnmounted(() => {
   border-bottom: 1px solid var(--color-gray-medium);
 }
 
+/* Enhanced mobile styles */
 @media (max-width: 768px) {
   .language-dropdown {
     right: auto;
     left: 0;
     max-width: calc(100vw - 2rem);
     overflow-x: hidden;
+    /* Ensure dropdown fits within viewport */
+    max-height: min(calc(100vh - 120px), 400px); /* Cap at 400px or viewport height */
+    /* Add visual indicators for scrollable content */
+    position: relative;
+  }
+  
+  /* Visual gradient indicators for scrollable content */
+  .language-dropdown::before,
+  .language-dropdown::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 20px;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+  }
+  
+  .language-dropdown::before {
+    top: 0;
+    background: linear-gradient(to bottom, var(--color-secondary) 0%, transparent 100%);
+    opacity: 0;
+  }
+  
+  .language-dropdown::after {
+    bottom: 0;
+    background: linear-gradient(to top, var(--color-secondary) 0%, transparent 100%);
+    opacity: 0;
+  }
+  
+  /* Show gradient indicators when content is scrollable */
+  .language-dropdown[scrollable-top]::before {
+    opacity: 1;
+  }
+  
+  .language-dropdown[scrollable-bottom]::after {
+    opacity: 1;
   }
   
   .language-switcher {
@@ -163,6 +296,17 @@ onUnmounted(() => {
     max-width: 100%;
     word-break: break-word;
     overflow-wrap: break-word;
+  }
+  
+  /* Ensure proper spacing for mobile */
+  .language-option {
+    padding: 1rem; /* Larger touch targets for mobile */
+    font-size: 1rem; /* Better readability on small screens */
+  }
+  
+  /* Subtle shadow for depth */
+  .language-dropdown {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -196,6 +340,33 @@ onUnmounted(() => {
   [dir="rtl"] .dropdown-arrow {
     margin-right: auto;
     margin-left: 0;
+  }
+  
+  /* RTL gradient indicators */
+  [dir="rtl"] .language-dropdown::before,
+  [dir="rtl"] .language-dropdown::after {
+    left: 0;
+    right: 0;
+  }
+}
+
+/* Ultra-small mobile devices */
+@media (max-width: 320px) {
+  .language-dropdown {
+    max-height: calc(100vh - 100px); /* Even more conservative for very small screens */
+    min-width: 100px; /* Ensure minimum usability */
+  }
+  
+  .language-option {
+    padding: 0.875rem 0.75rem; /* Slightly smaller but still touch-friendly */
+    font-size: 0.95rem;
+  }
+}
+
+/* Large mobile devices and tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .language-dropdown {
+    max-height: 350px; /* Reasonable height for tablets */
   }
 }
 </style>

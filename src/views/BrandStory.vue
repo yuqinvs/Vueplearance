@@ -4,10 +4,10 @@
     <section class="hero-minimal">
       <div class="hero-content fade-in">
         <h1 class="heading-hero text-serif">
-          Brand Story
+          {{ t.brandStory.title }}
         </h1>
         <p class="text-body">
-          The fusion of Pleats and Elegance
+          {{ t.brandStory.subtitle }}
         </p>
       </div>
     </section>
@@ -18,17 +18,15 @@
         <div class="brand-etymology fade-in">
           <div class="etymology-grid">
             <div class="etymology-item">
-              <h3 class="heading-large text-serif">Pleats</h3>
+              <h3 class="heading-large text-serif">{{ t.brandStory.pleatsArt }}</h3>
               <p class="text-body">
-                The art of folding fabric<br>
-                Creating structure and movement
+                {{ t.brandStory.pleatsDesc }}
               </p>
             </div>
             <div class="etymology-item">
-              <h3 class="heading-large text-serif">Elegance</h3>
+              <h3 class="heading-large text-serif">{{ t.brandStory.eleganceArt }}</h3>
               <p class="text-body">
-                Refined beauty in simplicity<br>
-                Timeless sophistication
+                {{ t.brandStory.eleganceDesc }}
               </p>
             </div>
           </div>
@@ -46,7 +44,7 @@
               <span class="brand-letter">e</span>
             </h2>
             <p class="text-body lead">
-              Where structured artistry meets effortless grace
+              {{ t.brandStory.whereStructuredArtistry }}
             </p>
           </div>
         </div>
@@ -58,25 +56,19 @@
       <div class="container-minimal">
         <div class="grid-editorial">
           <div class="editorial-text slide-in-left">
-            <div class="text-caption">Philosophy</div>
+            <div class="text-caption">{{ t.brandStory.philosophyTitle }}</div>
             <h2 class="heading-display text-serif space-y-sm">
-              The Art of Transformation
+              {{ t.brandStory.artOfTransformation }}
             </h2>
             <div class="space-y-md">
               <p class="text-body">
-                Born from the fusion of <strong>Pleats</strong> and <strong>Elegance</strong>, Plearance represents 
-                the harmonious marriage of technical precision and aesthetic refinement. Each fold tells a story 
-                of craftsmanship, while every silhouette whispers of timeless beauty.
+                {{ t.brandStory.transformationDesc1 }}
               </p>
               <p class="text-body">
-                Our design philosophy celebrates the transformative power of pleating — not merely as a technique, 
-                but as a language of expression that speaks to the modern woman's desire for both structure 
-                and fluidity in her wardrobe.
+                {{ t.brandStory.transformationDesc2 }}
               </p>
               <p class="text-body">
-                Through meticulous attention to proportion and an unwavering commitment to quality, we create 
-                garments that transcend seasonal trends, offering instead a permanent collection of refined 
-                pieces that age gracefully with their wearer.
+                {{ t.brandStory.transformationDesc3 }}
               </p>
             </div>
           </div>
@@ -95,25 +87,19 @@
             <div class="process-image"></div>
           </div>
           <div class="editorial-text slide-in-right">
-            <div class="text-caption">Process</div>
+            <div class="text-caption">{{ t.brandStory.craftsmanshipTitle }}</div>
             <h2 class="heading-display text-serif space-y-sm">
-              From Concept to Creation
+              {{ t.brandStory.fromConceptToCreation }}
             </h2>
             <div class="space-y-md">
               <p class="text-body">
-                Every Plearance piece begins with an idea — a vision of how fabric can be transformed 
-                through the ancient art of pleating into something both functional and beautiful.
+                {{ t.brandStory.conceptDesc1 }}
               </p>
               <p class="text-body">
-                Our design process is meticulous and thoughtful. We begin by selecting the finest fabrics, 
-                each chosen for its ability to hold a pleat while maintaining drape and movement. 
-                The pleating process itself is a dance between heat, pressure, and time, requiring 
-                years of expertise to perfect.
+                {{ t.brandStory.conceptDesc2 }}
               </p>
               <p class="text-body">
-                The result is clothing that moves with you, that breathes with you, that becomes 
-                more beautiful with each wearing. This is not fast fashion — this is slow, deliberate 
-                creation of pieces meant to last a lifetime.
+                {{ t.brandStory.conceptDesc3 }}
               </p>
             </div>
           </div>
@@ -125,33 +111,27 @@
     <section class="section-editorial">
       <div class="container-minimal">
         <div class="heritage-content fade-in">
-          <div class="text-caption">Heritage & Future</div>
+          <div class="text-caption">{{ t.brandStory.heritageAndFuture }}</div>
           <h2 class="heading-display text-serif space-y-sm">
-            Rooted in Tradition, Designed for Tomorrow
+            {{ t.brandStory.rootedInTradition }}
           </h2>
           <div class="heritage-grid">
             <div class="heritage-item">
-              <h3 class="heading-large text-serif">Japanese Heritage</h3>
+              <h3 class="heading-large text-serif">{{ t.brandStory.japaneseHeritage }}</h3>
               <p class="text-body">
-                Drawing from centuries of Japanese textile tradition, our approach to pleating 
-                honors the past while embracing contemporary aesthetics. The precision and 
-                attention to detail that defines Japanese craftsmanship is evident in every fold.
+                {{ t.brandStory.japaneseHeritageDesc }}
               </p>
             </div>
             <div class="heritage-item">
-              <h3 class="heading-large text-serif">Modern Innovation</h3>
+              <h3 class="heading-large text-serif">{{ t.brandStory.modernInnovation }}</h3>
               <p class="text-body">
-                By combining traditional techniques with modern technology, we push the boundaries 
-                of what's possible with pleated fabric. Our commitment to innovation ensures 
-                that each collection builds upon the last, constantly evolving and improving.
+                {{ t.brandStory.modernInnovationDesc }}
               </p>
             </div>
             <div class="heritage-item">
-              <h3 class="heading-large text-serif">Sustainable Future</h3>
+              <h3 class="heading-large text-serif">{{ t.brandStory.sustainableFuture }}</h3>
               <p class="text-body">
-                Sustainability is not an afterthought — it's woven into every decision we make. 
-                From selecting eco-friendly fabrics to creating timeless designs that transcend 
-                trends, we're building a brand that respects both people and planet.
+                {{ t.brandStory.sustainableFutureDesc }}
               </p>
             </div>
           </div>
@@ -162,7 +142,12 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted } from 'vue'
+import { onMounted, onUnmounted, computed } from 'vue'
+import { useLanguageStore } from '@/stores/language'
+import translations from '@/locales/translations'
+
+const languageStore = useLanguageStore()
+const t = computed(() => translations[languageStore.currentLanguage])
 
 // Scroll animation handler
 const handleScroll = () => {

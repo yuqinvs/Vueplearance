@@ -7,8 +7,8 @@
           Plearance
         </h1>
         <p class="text-body space-y-md">
-          優雅なひだ<br>
-          <em>An independent designer brand inspired by the art of pleats</em>
+          {{ t.hero.subtitle }}<br>
+          <em>{{ t.home.heroSubtitle }}</em>
         </p>
       </div>
       <div class="hero-image parallax-element">
@@ -21,36 +21,32 @@
       <div class="container-minimal">
         <div class="grid-editorial">
           <div class="editorial-text slide-in-left">
-            <div class="text-caption">Creative Excellence</div>
+            <div class="text-caption">{{ t.home.creativeExcellence }}</div>
             <h2 class="heading-display text-serif space-y-sm">
-              Yui Nakahara
+              {{ t.home.yuiNakahara }}
             </h2>
             <div class="space-y-md">
               <blockquote class="text-body text-serif">
-                "Pleats and structure bring garments to life"
+                "{{ t.home.pleatsQuote }}"
               </blockquote>
               <p class="text-body">
-                Born in 1991 in Ōita, Japan. Graduated from Bunka Fashion College (Apparel Technology). 
-                After graduation, joined ISSEY MIYAKE and worked on PLEATS PLEASE in design and pattern making, 
-                gaining end-to-end experience from planning, pattern development to sample prototyping.
+                {{ t.home.yuiBio }}
               </p>
               <p class="text-body">
-                My practice centers on the balance between function and beauty, emphasizing structure, proportion, 
-                and the sustainable use of fabric. By connecting modern craftsmanship with everyday wearing scenarios, 
-                she cultivates a distinct, restrained visual language.
+                {{ t.home.yuiPhilosophy }}
               </p>
               <div class="space-y-sm">
                 <RouterLink to="/brand-story" class="btn-minimal">
-                  Brand Story
+                  {{ t.home.brandStory }}
                 </RouterLink>
                 <RouterLink to="/contacts" class="btn-minimal btn-minimal-inverted">
-                  Contact Us
+                  {{ t.home.contactUs }}
                 </RouterLink>
               </div>
             </div>
           </div>
           <div class="editorial-image slide-in-right">
-            <div class="image-placeholder hero-image-bg"></div>
+            <img src="@/assets/img/designer.webp" alt="Designer Yui Nakahara" class="editorial-image-content" />
           </div>
         </div>
       </div>
@@ -61,28 +57,22 @@
       <div class="container-minimal">
         <div class="grid-editorial">
           <div class="editorial-image slide-in-left">
-            <div class="image-placeholder factory-bg"></div>
+            <img src="@/assets/img/factory.png" alt="Plearance Manufacturing Facility" class="editorial-image-content" />
           </div>
           <div class="editorial-text slide-in-right">
-            <div class="text-caption">Our Manufacturing Excellence</div>
+            <div class="text-caption">{{ t.home.manufacturingExcellence }}</div>
             <h2 class="heading-display text-serif space-y-sm">
-              Welcome to the world of exceptional pleated artistry
+              {{ t.home.exceptionalPleatedArtistry }}
             </h2>
             <div class="space-y-md">
               <p class="text-body">
-                In pursuit of creating the finest pleated garments, I have carefully selected the most prestigious 
-                manufacturing partner renowned for their unparalleled expertise in fabric manipulation and pleating techniques.
+                {{ t.home.manufacturingDesc1 }}
               </p>
               <p class="text-body">
-                Our chosen manufacturer operates state-of-the-art pleating machinery, featuring precision-engineered 
-                equipment that transforms ordinary fabrics into extraordinary sculptural pieces. These advanced machines 
-                ensure every fold is perfectly aligned, every crease maintains its integrity, and every pleat tells 
-                a story of meticulous craftsmanship.
+                {{ t.home.manufacturingDesc2 }}
               </p>
               <p class="text-body">
-                The manufacturing facility houses cutting-edge technology including computer-controlled pleating systems, 
-                heat-setting chambers with precise temperature regulation, and specialized pressing equipment that locks 
-                each fold into permanent perfection.
+                {{ t.home.manufacturingDesc3 }}
               </p>
             </div>
           </div>
@@ -94,13 +84,12 @@
     <section class="section-editorial">
       <div class="container-minimal">
         <div class="brand-philosophy fade-in">
-          <div class="text-caption">Philosophy</div>
+          <div class="text-caption">{{ t.home.philosophy }}</div>
           <h2 class="heading-display text-serif space-y-sm">
-            Where structured artistry meets effortless grace
+            {{ t.home.structuredArtistry }}
           </h2>
           <p class="text-body" style="max-width: 800px; margin: 0 auto;">
-            PLEARANCE is my newly founded personal brand, specializing in pleated womenswear across diverse categories 
-            — from everyday essentials to statement pieces — exploring structure, movement, and comfort through pleats.
+            {{ t.home.brandPhilosophy }}
           </p>
         </div>
       </div>
@@ -109,8 +98,13 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted } from 'vue'
+import { onMounted, onUnmounted, computed } from 'vue'
 import { RouterLink } from 'vue-router'
+import { useLanguageStore } from '@/stores/language'
+import translations from '@/locales/translations'
+
+const languageStore = useLanguageStore()
+const t = computed(() => translations[languageStore.currentLanguage])
 
 // Scroll animation handler
 const handleScroll = () => {
@@ -230,6 +224,20 @@ onUnmounted(() => {
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
 }
 
+.editorial-image-content {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: var(--transition-smooth);
+}
+
+.editorial-image-content:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
 .brand-philosophy {
   text-align: center;
   padding: var(--space-xxl) 0;
@@ -251,6 +259,10 @@ blockquote {
   
   .hero-image-bg,
   .factory-bg {
+    height: 300px;
+  }
+  
+  .editorial-image-content {
     height: 300px;
   }
   

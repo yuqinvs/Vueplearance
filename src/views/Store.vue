@@ -4,10 +4,10 @@
     <section class="hero-minimal">
       <div class="hero-content fade-in">
         <h1 class="heading-hero text-serif">
-          Store
+          {{ t.store.title }}
         </h1>
         <p class="text-body">
-          Discover our curated collection
+          {{ t.store.discoverCuratedCollection }}
         </p>
       </div>
     </section>
@@ -16,23 +16,15 @@
     <section class="section-editorial">
       <div class="container-minimal">
         <div class="store-info fade-in">
-          <div class="text-caption">Visit Us</div>
+          <div class="text-caption">{{ t.store.visitUs }}</div>
           <h2 class="heading-display text-serif space-y-sm">
-            Experience Plearance in Person
+            {{ t.store.experienceInPerson }}
           </h2>
           <div class="store-details">
             <div class="store-address">
-              <h3 class="heading-large text-serif">Tokyo Flagship</h3>
-              <p class="text-body">
-                1 Chome-8-1 Marunouchi<br>
-                Chiyoda City, Tokyo<br>
-                100-0005, Japan
-              </p>
-              <p class="text-body">
-                <strong>Hours:</strong><br>
-                Monday - Saturday: 11:00 - 20:00<br>
-                Sunday: 12:00 - 19:00
-              </p>
+              <h3 class="heading-large text-serif">{{ t.store.tokyoFlagship }}</h3>
+              <p class="text-body" v-html="t.store.storeAddress"></p>
+              <p class="text-body" v-html="t.store.storeHours"></p>
             </div>
             <div class="store-image">
               <div class="store-visual"></div>
@@ -46,26 +38,19 @@
     <section class="section-editorial">
       <div class="container-minimal">
         <div class="experience-content slide-in-left">
-          <div class="text-caption">Experience</div>
+          <div class="text-caption">{{ t.store.experienceInPerson }}</div>
           <h2 class="heading-display text-serif space-y-sm">
-            A Personal Journey
+            {{ t.store.personalJourney }}
           </h2>
           <div class="space-y-md">
             <p class="text-body">
-              Stepping into a Plearance store is more than a shopping trip — it's an 
-              immersion into the world of pleated artistry. Our carefully designed spaces 
-              reflect the same attention to detail and minimalist aesthetic that defines our clothing.
+              {{ t.store.personalJourneyDesc1 }}
             </p>
             <p class="text-body">
-              Each store is conceived as a gallery where garments are displayed as works of art. 
-              The lighting is meticulously calibrated to highlight the texture and movement of 
-              each pleat, allowing you to appreciate the craftsmanship that goes into every piece.
+              {{ t.store.personalJourneyDesc2 }}
             </p>
             <p class="text-body">
-              Our knowledgeable staff are trained not just in fashion, but in the art and 
-              science of pleating. They can guide you through our collections, explaining 
-              the different techniques used and helping you find pieces that complement 
-              your personal style and lifestyle.
+              {{ t.store.personalJourneyDesc3 }}
             </p>
           </div>
         </div>
@@ -76,41 +61,33 @@
     <section class="section-editorial">
       <div class="container-minimal">
         <div class="services-content slide-in-right">
-          <div class="text-caption">Services</div>
+          <div class="text-caption">{{ t.store.bespokeServices }}</div>
           <h2 class="heading-display text-serif space-y-sm">
-            Bespoke Services
+            {{ t.store.bespokeServices }}
           </h2>
           <div class="services-grid">
             <div class="service-item">
-              <h3 class="heading-large text-serif">Personal Styling</h3>
+              <h3 class="heading-large text-serif">{{ t.store.personalStyling }}</h3>
               <p class="text-body">
-                Our expert stylists work with you to understand your aesthetic preferences, 
-                lifestyle needs, and body type to curate a selection of pieces that will 
-                become the foundation of your wardrobe.
+                {{ t.store.personalStylingDesc }}
               </p>
             </div>
             <div class="service-item">
-              <h3 class="heading-large text-serif">Custom Pleating</h3>
+              <h3 class="heading-large text-serif">{{ t.store.customPleating }}</h3>
               <p class="text-body">
-                For those seeking something truly unique, we offer custom pleating services. 
-                Work with our artisans to create bespoke pleat patterns that reflect your 
-                personal style and vision.
+                {{ t.store.customPleatingDesc }}
               </p>
             </div>
             <div class="service-item">
-              <h3 class="heading-large text-serif">Alterations</h3>
+              <h3 class="heading-large text-serif">{{ t.store.alterations }}</h3>
               <p class="text-body">
-                Our in-house alteration service ensures that every piece fits you perfectly. 
-                We understand that the beauty of pleated garments lies in their precise fit 
-                and drape.
+                {{ t.store.alterationsDesc }}
               </p>
             </div>
             <div class="service-item">
-              <h3 class="heading-large text-serif">Care Instructions</h3>
+              <h3 class="heading-large text-serif">{{ t.store.careInstructions }}</h3>
               <p class="text-body">
-                Learn how to properly care for your pleated garments to ensure they maintain 
-                their beauty and structure for years to come. We provide detailed guidance 
-                on cleaning, storage, and maintenance.
+                {{ t.store.careInstructionsDesc }}
               </p>
             </div>
           </div>
@@ -122,41 +99,35 @@
     <section class="section-editorial">
       <div class="container-minimal">
         <div class="online-content fade-in">
-          <div class="text-caption">Online</div>
+          <div class="text-caption">{{ t.store.shopAnywhere }}</div>
           <h2 class="heading-display text-serif space-y-sm">
-            Shop from Anywhere
+            {{ t.store.shopAnywhere }}
           </h2>
           <div class="online-details">
             <div class="online-text">
               <p class="text-body">
-                While we believe nothing compares to experiencing our garments in person, 
-                we understand that visiting our Tokyo flagship isn't always possible. 
-                Our online store brings the Plearance experience to you, wherever you are.
+                {{ t.store.shopOnlineDesc1 }}
               </p>
               <p class="text-body">
-                Each product page includes detailed photographs that capture the texture 
-                and movement of our pleated fabrics. We provide comprehensive measurements, 
-                fabric information, and styling suggestions to help you make informed decisions.
+                {{ t.store.shopOnlineDesc2 }}
               </p>
               <p class="text-body">
-                Our customer service team is available to answer questions, provide styling 
-                advice, and ensure that your online shopping experience meets the same 
-                high standards as visiting our store in person.
+                {{ t.store.shopOnlineDesc3 }}
               </p>
             </div>
             <div class="online-contact">
-              <h3 class="heading-large text-serif">Get in Touch</h3>
+              <h3 class="heading-large text-serif">{{ t.store.onlineContact }}</h3>
               <div class="contact-info">
                 <p class="text-body">
-                  <strong>Email:</strong><br>
+                  <strong>{{ t.store.emailLabel }}:</strong><br>
                   <a href="mailto:store@plearance.com">store@plearance.com</a>
                 </p>
                 <p class="text-body">
-                  <strong>Phone:</strong><br>
+                  <strong>{{ t.store.phoneLabel }}:</strong><br>
                   +81-3-1234-5678
                 </p>
                 <p class="text-body">
-                  <strong>WhatsApp:</strong><br>
+                  <strong>{{ t.store.whatsappLabel }}:</strong><br>
                   +81-90-1234-5678
                 </p>
               </div>
@@ -171,17 +142,14 @@
       <div class="container-minimal">
         <div class="cta-section fade-in">
           <h2 class="heading-display text-serif space-y-sm">
-            Begin Your Plearance Journey
+            {{ t.store.beginJourney }}
           </h2>
           <p class="text-body" style="max-width: 600px; margin: 0 auto;">
-            Whether you visit our Tokyo flagship or shop online, we're here to help 
-            you discover the transformative power of pleated artistry. Each piece in 
-            our collection is designed to become a cherished part of your wardrobe, 
-            bringing structure, movement, and elegance to your everyday life.
+            {{ t.store.beginJourneyDesc }}
           </p>
           <div class="cta-buttons space-y-sm">
             <RouterLink to="/contacts" class="btn-minimal btn-minimal-inverted">
-              Contact Us
+              {{ t.store.contactUs }}
             </RouterLink>
           </div>
         </div>
@@ -191,8 +159,13 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted } from 'vue'
+import { onMounted, onUnmounted, computed } from 'vue'
 import { RouterLink } from 'vue-router'
+import { useLanguageStore } from '@/stores/language'
+import translations from '@/locales/translations'
+
+const languageStore = useLanguageStore()
+const t = computed(() => translations[languageStore.currentLanguage])
 
 // Scroll animation handler
 const handleScroll = () => {
