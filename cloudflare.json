@@ -1,0 +1,13 @@
+{
+  "name": "vueplearance",
+  "build": {
+    "command": "npm run build",
+    "output": "dist"
+  },
+  "routes": [
+    {
+      "pattern": "/*",
+      "script": "vueplearance"
+    }
+  ]
+}
