@@ -32,7 +32,7 @@
       <div class="container-minimal">
         <div class="products-grid">
           <!-- Everyday Essentials -->
-          <div class="product-category slide-in-left">
+          <div>
             <div class="category-image everyday-bg">
               <img src="@/assets/img/EverydayEssentials.png" alt="Everyday Essentials Collection" class="category-image-content" />
             </div>
@@ -52,7 +52,7 @@
 
           <!-- Statement Pieces -->
           <div class="product-category slide-in-right">
-            <div class="category-image statement-bg">
+            <div>
               <img src="@/assets/img/StatementPieces.png" alt="Statement Pieces Collection" class="category-image-content" />
             </div>
             <div class="category-content">
@@ -71,7 +71,7 @@
 
           <!-- Professional Collection -->
           <div class="product-category slide-in-left">
-            <div class="category-image professional-bg">
+            <div>
               <img src="@/assets/img/ProfessionalCollection.png" alt="Professional Collection" class="category-image-content" />
             </div>
             <div class="category-content">
@@ -90,7 +90,7 @@
 
           <!-- Evening Elegance -->
           <div class="product-category slide-in-right">
-            <div class="category-image evening-bg">
+            <div>
               <img src="@/assets/img/EveningElegance.png" alt="Evening Elegance Collection" class="category-image-content" />
             </div>
             <div class="category-content">
