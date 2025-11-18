@@ -73,7 +73,7 @@
             </div>
           </div>
           <div class="editorial-image slide-in-right">
-            <div class="philosophy-image"></div>
+            <img src="@/assets/img/Transformation.png" alt="pleats logo" class="philosophy-image" />
           </div>
         </div>
       </div>
@@ -84,7 +84,7 @@
       <div class="container-minimal">
         <div class="grid-editorial">
           <div class="editorial-image slide-in-left">
-            <div class="process-image"></div>
+            <img src="@/assets/img/pleats.webp" alt="pleats" class="process-image" />
           </div>
           <div class="editorial-text slide-in-right">
             <div class="text-caption">{{ t.brandStory.craftsmanshipTitle }}</div>

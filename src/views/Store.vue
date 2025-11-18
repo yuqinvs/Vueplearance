@@ -121,15 +121,7 @@
                 <p class="text-body">
                   <strong>{{ t.store.emailLabel }}:</strong><br>
                   <a href="mailto:store@plearance.com">store@plearance.com</a>
-                </p>
-                <p class="text-body">
-                  <strong>{{ t.store.phoneLabel }}:</strong><br>
-                  +81-3-1234-5678
-                </p>
-                <p class="text-body">
-                  <strong>{{ t.store.whatsappLabel }}:</strong><br>
-                  +81-90-1234-5678
-                </p>
+                </p>                
               </div>
             </div>
           </div>

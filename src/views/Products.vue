@@ -33,7 +33,9 @@
         <div class="products-grid">
           <!-- Everyday Essentials -->
           <div class="product-category slide-in-left">
-            <div class="category-image everyday-bg"></div>
+            <div class="category-image everyday-bg">
+              <img src="@/assets/img/EverydayEssentials.png" alt="Everyday Essentials Collection" class="category-image-content" />
+            </div>
             <div class="category-content">
               <div class="text-caption">Category</div>
               <h3 class="heading-large text-serif">{{ t.products.everydayEssentials }}</h3>
@@ -50,7 +52,9 @@
 
           <!-- Statement Pieces -->
           <div class="product-category slide-in-right">
-            <div class="category-image statement-bg"></div>
+            <div class="category-image statement-bg">
+              <img src="@/assets/img/StatementPieces.png" alt="Statement Pieces Collection" class="category-image-content" />
+            </div>
             <div class="category-content">
               <div class="text-caption">Category</div>
               <h3 class="heading-large text-serif">{{ t.products.statementPieces }}</h3>
@@ -67,7 +71,9 @@
 
           <!-- Professional Collection -->
           <div class="product-category slide-in-left">
-            <div class="category-image professional-bg"></div>
+            <div class="category-image professional-bg">
+              <img src="@/assets/img/ProfessionalCollection.png" alt="Professional Collection" class="category-image-content" />
+            </div>
             <div class="category-content">
               <div class="text-caption">Category</div>
               <h3 class="heading-large text-serif">{{ t.products.professionalCollection }}</h3>
@@ -84,7 +90,9 @@
 
           <!-- Evening Elegance -->
           <div class="product-category slide-in-right">
-            <div class="category-image evening-bg"></div>
+            <div class="category-image evening-bg">
+              <img src="@/assets/img/EveningElegance.png" alt="Evening Elegance Collection" class="category-image-content" />
+            </div>
             <div class="category-content">
               <div class="text-caption">Category</div>
               <h3 class="heading-large text-serif">{{ t.products.eveningElegance }}</h3>
@@ -239,6 +247,18 @@ onUnmounted(() => {
 .category-image:hover {
   transform: translateY(-10px);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.category-image-content {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: var(--transition-smooth);
+}
+
+.category-image:hover .category-image-content {
+  transform: scale(1.05);
 }
 
 .everyday-bg {

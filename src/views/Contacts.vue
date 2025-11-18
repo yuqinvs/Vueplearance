@@ -41,15 +41,7 @@
                 <p class="text-body">
                   <strong>{{ t.contacts.email }}:</strong><br>
                   <a href="mailto:store@plearance.com">store@plearance.com</a>
-                </p>
-                <p class="text-body">
-                  <strong>{{ t.contacts.phone }}:</strong><br>
-                  +81-3-1234-5678
-                </p>
-                <p class="text-body">
-                  <strong>{{ t.contacts.phone }}:</strong><br>
-                  +81-90-1234-5678
-                </p>
+                </p>                
               </div>
             </div>
             
