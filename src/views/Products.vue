@@ -32,8 +32,8 @@
       <div class="container-minimal">
         <div class="products-grid">
           <!-- Everyday Essentials -->
-          <div>
-            <div class="category-image everyday-bg">
+          <div class="product-category slide-in-left">
+            <div>
               <img src="@/assets/img/EverydayEssentials.png" alt="Everyday Essentials Collection" class="category-image-content" />
             </div>
             <div class="category-content">

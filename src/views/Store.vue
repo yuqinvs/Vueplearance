@@ -27,7 +27,9 @@
               <p class="text-body" v-html="t.store.storeHours"></p>
             </div>
             <div class="store-image">
-              <div class="store-visual"></div>
+              <div class="store-visual">
+                <img src="@/assets/img/store.webp" alt="Plearance Store" class="store-image-content" />
+              </div>
             </div>
           </div>
         </div>
@@ -214,7 +216,6 @@ onUnmounted(() => {
 .store-visual {
   width: 100%;
   height: 400px;
-  background: linear-gradient(135deg, var(--color-gray-light) 0%, var(--color-gray-medium) 50%, var(--color-accent) 100%);
   border-radius: 8px;
   position: relative;
   overflow: hidden;
@@ -227,9 +228,14 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="20" y="20" width="60" height="60" stroke="%23fff" stroke-width="1" fill="none" opacity="0.3"/></svg>');
-  background-size: 150px 150px;
-  animation: pleatWave 10s ease-in-out infinite;
+  
+}
+
+.store-image-content {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .experience-content {
