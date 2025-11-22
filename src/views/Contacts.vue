@@ -239,17 +239,15 @@
               </p>
             </div>
             <div class="faq-item">
-              <h3 class="heading-large text-serif">Can I request custom pleating?</h3>
+              <h3 class="heading-large text-serif">{{ t.contacts.canRequestCustom }}</h3>
               <p class="text-body">
-                Absolutely! We offer custom pleating services. Contact us to discuss your 
-                vision and our artisans will work with you to create something unique.
+                {{ t.contacts.customDesc }}
               </p>
             </div>
             <div class="faq-item">
-              <h3 class="heading-large text-serif">What is your return policy?</h3>
+              <h3 class="heading-large text-serif">{{ t.contacts.whatIsReturnPolicy }}</h3>
               <p class="text-body">
-                We accept returns within 14 days of delivery for unworn items with tags attached. 
-                Custom orders and altered items are final sale.
+                {{ t.contacts.returnDesc }}
               </p>
             </div>
           </div>
