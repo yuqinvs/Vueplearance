@@ -1,0 +1,22 @@
+{
+  "baseUrl": "https://plearance.com",
+  "include": ["*"],
+  "exclude": [],
+  "languages": [],
+  "changefreqDefault": "weekly",
+  "priorityDefault": 0.5,
+  "changefreqMap": {
+    "/": "daily",
+    "/products": "weekly",
+    "/store": "monthly",
+    "/brand-story": "monthly",
+    "/contacts": "monthly"
+  },
+  "priorityMap": {
+    "/": 1.0,
+    "/products": 0.8,
+    "/store": 0.7,
+    "/brand-story": 0.6,
+    "/contacts": 0.5
+  }
+}
