@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 
-export type Language = 'en' | 'zh' | 'ja' | 'vi' | 'ms' | 'fr' | 'ar'
+export type Language = 'en' | 'zh' | 'ja' | 'vi' | 'ms' | 'fr' | 'id' | 'ar'
 
 export const useLanguageStore = defineStore('language', () => {
   // Load language from localStorage or default to 'en'

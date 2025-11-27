@@ -54,7 +54,7 @@
     <!-- Brand Philosophy -->
     <section class="section-editorial">
       <div class="container-minimal">
-        <div class="grid-editorial">
+        <div class="grid-editorial" v-if="!languageStore.isRTL">
           <div class="editorial-text slide-in-left">
             <div class="text-caption">{{ t.brandStory.philosophyTitle }}</div>
             <h2 class="heading-display text-serif space-y-sm">
@@ -74,6 +74,28 @@
           </div>
           <div class="editorial-image slide-in-right">
             <img src="@/assets/img/Transformation.png" alt="pleats logo" class="philosophy-image" />
+          </div>
+        </div>
+        <div class="grid-editorial" v-else>
+          <div class="editorial-image slide-in-left">
+            <img src="@/assets/img/Transformation.png" alt="pleats logo" class="philosophy-image" />
+          </div>
+          <div class="editorial-text slide-in-right">
+            <div class="text-caption">{{ t.brandStory.philosophyTitle }}</div>
+            <h2 class="heading-display text-serif space-y-sm">
+              {{ t.brandStory.artOfTransformation }}
+            </h2>
+            <div class="space-y-md">
+              <p class="text-body">
+                {{ t.brandStory.transformationDesc1 }}
+              </p>
+              <p class="text-body">
+                {{ t.brandStory.transformationDesc2 }}
+              </p>
+              <p class="text-body">
+                {{ t.brandStory.transformationDesc3 }}
+              </p>
+            </div>
           </div>
         </div>
       </div>

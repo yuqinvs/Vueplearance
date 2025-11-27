@@ -33,11 +33,11 @@
         <div class="products-grid">
           <!-- Everyday Essentials -->
           <div class="product-category slide-in-left">
-            <div>
+            <div class="category-image">
               <img src="@/assets/img/EverydayEssentials.png" alt="Everyday Essentials Collection" class="category-image-content" />
             </div>
             <div class="category-content">
-              <div class="text-caption">Category</div>
+              <div class="text-caption">{{ t.products.categoryLabel }}</div>
               <h3 class="heading-large text-serif">{{ t.products.everydayEssentials }}</h3>
               <p class="text-body">
                 {{ t.products.everydayDesc }}
@@ -51,12 +51,12 @@
           </div>
 
           <!-- Statement Pieces -->
-          <div class="product-category slide-in-right">
-            <div>
+          <div class="product-category reverse slide-in-right">
+            <div class="category-image">
               <img src="@/assets/img/StatementPieces.png" alt="Statement Pieces Collection" class="category-image-content" />
             </div>
             <div class="category-content">
-              <div class="text-caption">Category</div>
+              <div class="text-caption">{{ t.products.categoryLabel }}</div>
               <h3 class="heading-large text-serif">{{ t.products.statementPieces }}</h3>
               <p class="text-body">
                 {{ t.products.statementDesc }}
@@ -71,11 +71,11 @@
 
           <!-- Professional Collection -->
           <div class="product-category slide-in-left">
-            <div>
+            <div class="category-image">
               <img src="@/assets/img/ProfessionalCollection.png" alt="Professional Collection" class="category-image-content" />
             </div>
             <div class="category-content">
-              <div class="text-caption">Category</div>
+              <div class="text-caption">{{ t.products.categoryLabel }}</div>
               <h3 class="heading-large text-serif">{{ t.products.professionalCollection }}</h3>
               <p class="text-body">
                 {{ t.products.professionalDesc }}
@@ -89,12 +89,12 @@
           </div>
 
           <!-- Evening Elegance -->
-          <div class="product-category slide-in-right">
-            <div>
+          <div class="product-category reverse slide-in-right">
+            <div class="category-image">
               <img src="@/assets/img/EveningElegance.png" alt="Evening Elegance Collection" class="category-image-content" />
             </div>
             <div class="category-content">
-              <div class="text-caption">Category</div>
+              <div class="text-caption">{{ t.products.categoryLabel }}</div>
               <h3 class="heading-large text-serif">{{ t.products.eveningElegance }}</h3>
               <p class="text-body">
                 {{ t.products.eveningDesc }}
@@ -227,14 +227,10 @@ onUnmounted(() => {
   align-items: center;
 }
 
-.product-category:nth-child(even) {
-  grid-template-columns: 1fr 1fr;
-  direction: rtl;
-}
-
-.product-category:nth-child(even) .category-content {
-  direction: ltr;
-}
+.category-image { order: 1; }
+.category-content { order: 2; }
+.product-category.reverse .category-image { order: 2; }
+.product-category.reverse .category-content { order: 1; }
 
 .category-image {
   height: 400px;

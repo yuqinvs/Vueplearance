@@ -1,4 +1,4 @@
-export type Language = 'en' | 'zh' | 'ja' | 'vi' | 'ms' | 'fr' | 'ar'
+export type Language = 'en' | 'zh' | 'ja' | 'vi' | 'ms' | 'fr' | 'id' | 'ar'
 
 export interface Translation {
   nav: {
@@ -7,6 +7,7 @@ export interface Translation {
     products: string
     store: string
     contact: string
+    abaya: string
   }
   language: {
     en: string
@@ -15,6 +16,7 @@ export interface Translation {
     vi: string
     ms: string
     fr: string
+    id: string
     ar: string
   }
   hero: {
@@ -114,6 +116,7 @@ export interface Translation {
     discoverCollection: string
     everyFoldTellsStory: string
     collectionDesc: string
+    categoryLabel: string
     everydayEssentials: string
     everydayDesc: string
     statementPieces: string
@@ -264,6 +267,42 @@ export interface Translation {
     customDesc: string
     whatIsReturnPolicy: string
     returnDesc: string
+  },
+  abaya: {
+    title: string
+    subtitle: string
+    culturalRespect: string
+    culturalRespectDesc: string
+    whyAbayaSection: string
+    whyAbayaDesc: string
+    islamicCompliance: string
+    islamicComplianceDesc: string
+    productShowcase: string
+    classicAbaya: string
+    classicAbayaDesc: string
+    embroideredAbaya: string
+    embroideredAbayaDesc: string
+    modernAbaya: string
+    modernAbayaDesc: string
+    premiumFabric: string
+    premiumFabricDesc: string
+    designPhilosophy: string
+    designPhilosophyDesc: string
+    culturalSensitivity: string
+    culturalSensitivityDesc: string
+    customerCare: string
+    customerCareDesc: string
+    traditionalLabel: string
+    artisanCraftedLabel: string
+    contemporaryLabel: string
+    featureTimelessDesign: string
+    featureModestFit: string
+    featureHandEmbroidery: string
+    featureIntricatePatterns: string
+    featureIslamicArtistry: string
+    featureArchitectural: string
+    featureStructuredPleats: string
+    featureModernElegance: string
   }
 }
 
@@ -274,7 +313,8 @@ const translations: Record<Language, Translation> = {
       brandStory: 'Brand Story',
       products: 'Products',
       store: 'Store',
-      contact: 'Contact'
+      contact: 'Contact',
+      abaya: 'Abaya'
     },
     language: {
       en: 'English',
@@ -283,6 +323,7 @@ const translations: Record<Language, Translation> = {
       vi: 'Tiếng Việt',
       ms: 'Bahasa Melayu',
       fr: 'Français',
+      id: 'Bahasa Indonesia',
       ar: 'العربية'
     },
     hero: {
@@ -382,6 +423,7 @@ const translations: Record<Language, Translation> = {
       discoverCollection: 'Discover our collection of pleated artistry',
       everyFoldTellsStory: 'Every Fold Tells a Story',
       collectionDesc: 'Our carefully curated collection represents the pinnacle of pleated craftsmanship. Each piece is designed to transcend seasons, offering timeless elegance through the transformative power of pleats.',
+      categoryLabel: 'Category',
       everydayEssentials: 'Everyday Essentials',
       everydayDesc: 'Thoughtfully designed pieces that seamlessly integrate into your daily wardrobe. These versatile garments combine comfort with sophistication, featuring subtle pleating that adds texture and movement to classic silhouettes.',
       statementPieces: 'Statement Pieces',
@@ -532,6 +574,43 @@ const translations: Record<Language, Translation> = {
       customDesc: 'Absolutely! We offer custom pleating services. Contact us to discuss your vision.',
       whatIsReturnPolicy: 'What is your return policy?',
       returnDesc: 'We accept returns within 14 days of delivery for unworn items with tags attached.'
+    },
+    abaya: {
+      title: 'Muslim Abaya Collection',
+      subtitle: 'Elegant Traditional Wear',
+      culturalRespect: 'Cultural Respect & Understanding',
+      culturalRespectDesc: 'We deeply respect and honor Muslim culture and traditions. Our Abaya collection is crafted with the utmost care and sensitivity to Islamic values, ensuring that each piece reflects the dignity and modesty that Muslim women cherish.',
+      whyAbayaSection: 'Why We Created This Special Collection',
+      whyAbayaDesc: 'Understanding the unique needs of our Muslim customers, we have dedicated this special section to showcase our carefully curated Abaya collection. Each garment is designed to meet Islamic dress requirements while maintaining the elegant aesthetics and superior quality that defines our brand.',
+      islamicCompliance: 'Islamic Dress Compliance',
+      islamicComplianceDesc: 'Our Abayas are designed with full consideration of Islamic principles: modest coverage, loose-fitting silhouettes, and appropriate lengths. We use high-quality, non-transparent fabrics that provide comfort and confidence for daily wear.',
+      productShowcase: 'Our Abaya Collection',
+      classicAbaya: 'Classic Abaya',
+      classicAbayaDesc: 'Timeless design featuring flowing lines and elegant draping. Made from premium crepe fabric with subtle pleat details that add sophistication while maintaining modesty.',
+      embroideredAbaya: 'Embroidered Abaya',
+      embroideredAbayaDesc: 'Exquisite hand-embroidered details along the cuffs and hemline. Crafted from soft chiffon with intricate patterns that celebrate traditional Islamic artistry.',
+      modernAbaya: 'Modern Abaya',
+      modernAbayaDesc: 'Contemporary interpretation with structured pleats and architectural elements. Combines traditional modesty with modern fashion sensibilities.',
+      premiumFabric: 'Premium Fabric Selection',
+      premiumFabricDesc: 'We carefully select breathable, comfortable fabrics that drape beautifully while providing appropriate coverage. Our materials are chosen for their durability, comfort, and elegant appearance.',
+      designPhilosophy: 'Design Philosophy',
+      designPhilosophyDesc: 'Each Abaya is thoughtfully designed to honor Islamic traditions while incorporating contemporary elements that enhance both beauty and functionality.',
+      culturalSensitivity: 'Cultural Sensitivity Promise',
+      culturalSensitivityDesc: 'We are committed to maintaining the highest standards of cultural respect in all our designs and descriptions. Our team works closely with Muslim consultants to ensure authenticity and appropriateness.',
+      customerCare: 'Dedicated Customer Care',
+      customerCareDesc: 'Our knowledgeable staff understands the specific requirements of Islamic dress and is ready to assist you in finding the perfect Abaya that meets your needs and preferences.'
+      ,
+      traditionalLabel: 'Traditional',
+      artisanCraftedLabel: 'Artisan Crafted',
+      contemporaryLabel: 'Contemporary',
+      featureTimelessDesign: 'Timeless Design',
+      featureModestFit: 'Modest Fit',
+      featureHandEmbroidery: 'Hand Embroidery',
+      featureIntricatePatterns: 'Intricate Patterns',
+      featureIslamicArtistry: 'Islamic Artistry',
+      featureArchitectural: 'Architectural',
+      featureStructuredPleats: 'Structured Pleats',
+      featureModernElegance: 'Modern Elegance'
     }
   },
   zh: {
@@ -540,7 +619,8 @@ const translations: Record<Language, Translation> = {
       brandStory: '品牌故事',
       products: '产品',
       store: '店铺',
-      contact: '联系我们'
+      contact: '联系我们',
+      abaya: '长袍'
     },
     language: {
       en: 'English',
@@ -549,6 +629,7 @@ const translations: Record<Language, Translation> = {
       vi: 'Tiếng Việt',
       ms: 'Bahasa Melayu',
       fr: 'Français',
+      id: '印尼语',
       ar: 'العربية'
     },
     hero: {
@@ -648,6 +729,7 @@ const translations: Record<Language, Translation> = {
       discoverCollection: '发现我们的褶皱艺术收藏',
       everyFoldTellsStory: '每个褶皱都讲述一个故事',
       collectionDesc: '我们精心策划的收藏代表了褶皱工艺的巅峰。每件作品都设计为超越季节，通过褶皱的变革力量提供永恒的优雅。',
+      categoryLabel: '分类',
       everydayEssentials: '日常必需品',
       everydayDesc: '精心设计的产品，无缝融入您的日常衣橱。这些多功能服装将舒适与精致相结合，采用微妙的褶皱为经典轮廓增添质感和流动性。',
       statementPieces: '个性单品',
@@ -798,6 +880,43 @@ const translations: Record<Language, Translation> = {
       customDesc: '当然可以！我们提供定制褶皱服务。联系我们讨论您的想法。',
       whatIsReturnPolicy: '你们的退货政策是什么？',
       returnDesc: '我们在交付后14天内接受未穿着且带标签的商品退货。'
+    },
+    abaya: {
+      title: '穆斯林长袍(Abaya)专区',
+      subtitle: '优雅传统之选',
+      culturalRespect: '文化尊重与理解',
+      culturalRespectDesc: '我们深刻理解并尊重穆斯林文化与价值观，Abaya 系列以得体、简洁与尊严为核心，体现对穆斯林顾客的真诚关怀。',
+      whyAbayaSection: '设立专区的原因',
+      whyAbayaDesc: '为满足穆斯林顾客的特殊需求，我们设立专门的长袍专区。所有款式在保证美学的同时，严格遵循伊斯兰服饰规范。',
+      islamicCompliance: '符合伊斯兰服饰规范',
+      islamicComplianceDesc: '款式覆盖得体、廓形宽松、长度适宜，并选用不透明面料，兼顾舒适与自信。',
+      productShowcase: '长袍系列展示',
+      classicAbaya: '经典款长袍',
+      classicAbayaDesc: '流畅线条与优雅垂感，采用高品质绉面料，细腻褶裥强调端庄与品位。',
+      embroideredAbaya: '刺绣款长袍',
+      embroideredAbayaDesc: '袖口与下摆的精致手工刺绣，柔软雪纺搭配传统纹样，致敬伊斯兰美学。',
+      modernAbaya: '现代款长袍',
+      modernAbayaDesc: '结构性褶裥与当代美学融合，在保持端庄的同时呈现现代风格。',
+      premiumFabric: '甄选面料',
+      premiumFabricDesc: '透气舒适、垂感优雅且遮盖适宜，关注耐用与穿着体验。',
+      designPhilosophy: '设计理念',
+      designPhilosophyDesc: '以尊重传统为前提，融入现代元素，追求功能与美感的平衡。',
+      culturalSensitivity: '文化敏感性承诺',
+      culturalSensitivityDesc: '我们与穆斯林顾问合作，确保描述与设计表达真实、适宜且尊重文化。',
+      customerCare: '贴心顾客服务',
+      customerCareDesc: '了解伊斯兰服饰需求，协助您找到合适的长袍，提供耐心专业的建议。'
+      ,
+      traditionalLabel: '传统款',
+      artisanCraftedLabel: '匠心制作',
+      contemporaryLabel: '当代风格',
+      featureTimelessDesign: '经典设计',
+      featureModestFit: '端庄版型',
+      featureHandEmbroidery: '手工刺绣',
+      featureIntricatePatterns: '精致纹样',
+      featureIslamicArtistry: '伊斯兰美学',
+      featureArchitectural: '结构美学',
+      featureStructuredPleats: '结构性褶裥',
+      featureModernElegance: '现代优雅'
     }
   },
   ja: {
@@ -806,7 +925,8 @@ const translations: Record<Language, Translation> = {
       brandStory: 'ブランドストーリー',
       products: '製品',
       store: '店舗',
-      contact: 'お問い合わせ'
+      contact: 'お問い合わせ',
+      abaya: 'アバヤ'
     },
     language: {
       en: 'English',
@@ -815,6 +935,7 @@ const translations: Record<Language, Translation> = {
       vi: 'Tiếng Việt',
       ms: 'Bahasa Melayu',
       fr: 'Français',
+      id: 'Bahasa Indonesia',
       ar: 'العربية'
     },
     hero: {
@@ -914,6 +1035,7 @@ const translations: Record<Language, Translation> = {
       discoverCollection: 'プリーツアートのコレクションを発見',
       everyFoldTellsStory: 'すべての折り目が物語を語る',
       collectionDesc: '私たちが慎重にキュレートしたコレクションは、プリーツクラフトマンシップの頂点を表しています。各作品は季節を超越するように設計され、プリーツの変革的な力を通じてタイムレスなエレガンスを提供します。',
+      categoryLabel: 'カテゴリー',
       everydayEssentials: '日常の必需品',
       everydayDesc: 'デイリーウォードローブにシームレスに統合されるように念入りに設計された作品。これらの多用途の衣服は快適さと洗練を組み合わせ、クラシックなシルエットに質感と動きを加える繊細なプリーツを特徴としています。',
       statementPieces: 'ステートメントピース',
@@ -1064,6 +1186,42 @@ const translations: Record<Language, Translation> = {
       customDesc: 'もちろんできます！カスタムプリーツサービスを提供しています。あなたのビジョンについて話し合うためにご連絡ください。',
       whatIsReturnPolicy: '返品ポリシーは何ですか？',
       returnDesc: 'タグが付いた未着用の商品は、配達後14日以内に返品を受け付けています。'
+    },
+    abaya: {
+      title: 'アバヤ特集',
+      subtitle: '伝統に根差した優雅さ',
+      culturalRespect: '文化的敬意と理解',
+      culturalRespectDesc: 'ムスリム文化と価値観への敬意を大切にし、アバヤは控えめで上品さを重視した設計です。イスラームの規範に配慮し、心地よさと品位を両立します。',
+      whyAbayaSection: '特設ページの理由',
+      whyAbayaDesc: 'ムスリムのお客様のニーズに応えるため、アバヤの特集を設けました。美しさと品質を保ちながら、服装規定に適合する設計です。',
+      islamicCompliance: 'イスラーム服飾への適合',
+      islamicComplianceDesc: '十分なカバー、ゆとりのあるシルエット、適切な丈、不透明素材の採用など、規範に配慮しています。',
+      productShowcase: 'アバヤコレクション',
+      classicAbaya: 'クラシックアバヤ',
+      classicAbayaDesc: '流れるようなラインと上品なドレープ。上質なクレープ生地に控えめなプリーツを施し、端正さを表現。',
+      embroideredAbaya: '刺繍アバヤ',
+      embroideredAbayaDesc: '袖口や裾に精巧な手刺繍。柔らかなシフォンと伝統的なパターンで美意識を称えます。',
+      modernAbaya: 'モダンアバヤ',
+      modernAbayaDesc: '構造的なプリーツと建築的要素を取り入れ、控えめさと現代性を両立。',
+      premiumFabric: '厳選素材',
+      premiumFabricDesc: '通気性がよく快適、適切なカバーを保ちつつ美しいドレープを実現。耐久性と着心地にも配慮。',
+      designPhilosophy: 'デザイン哲学',
+      designPhilosophyDesc: '伝統への敬意を前提に、機能美と現代性のバランスを追求します。',
+      culturalSensitivity: '文化的配慮の約束',
+      culturalSensitivityDesc: 'ムスリムの方々の助言を得て、表現の適切さと真実性を担保します。',
+      customerCare: 'カスタマーケア',
+      customerCareDesc: 'イスラーム服飾の要件を理解し、最適な一着を見つけるお手伝いをします。',
+      traditionalLabel: 'トラディショナル',
+      artisanCraftedLabel: '職人仕立て',
+      contemporaryLabel: 'コンテンポラリー',
+      featureTimelessDesign: 'タイムレスなデザイン',
+      featureModestFit: '端正なフィット',
+      featureHandEmbroidery: '手刺繍',
+      featureIntricatePatterns: '精巧なパターン',
+      featureIslamicArtistry: 'イスラーム美学',
+      featureArchitectural: '建築的',
+      featureStructuredPleats: '構造的プリーツ',
+      featureModernElegance: 'モダンなエレガンス'
     }
   },
   vi: {
@@ -1072,7 +1230,8 @@ const translations: Record<Language, Translation> = {
       brandStory: 'Câu Chuyện Thương Hiệu',
       products: 'Sản Phẩm',
       store: 'Cửa Hàng',
-      contact: 'Liên Hệ'
+      contact: 'Liên Hệ',
+      abaya: 'Áo Abaya'
     },
     language: {
       en: 'English',
@@ -1081,6 +1240,7 @@ const translations: Record<Language, Translation> = {
       vi: 'Tiếng Việt',
       ms: 'Bahasa Melayu',
       fr: 'Français',
+      id: 'Bahasa Indonesia',
       ar: 'العربية'
     },
     hero: {
@@ -1180,6 +1340,7 @@ const translations: Record<Language, Translation> = {
       discoverCollection: 'Khám phá bộ sưu tập nghệ thuật nếp gấp của chúng tôi',
       everyFoldTellsStory: 'Mỗi Nếp Gấp Kể Một Câu Chuyện',
       collectionDesc: 'Bộ sưu tập được chúng tôi tuyển chọn cẩn thận đại diện cho đỉnh cao của nghề thủ công nếp gấp. Mỗi tác phẩm được thiết kế để vượt qua các mùa, mang lại vẻ đẹp vượt thời gian thông qua sức mạnh chuyển đổi của nếp gấp.',
+      categoryLabel: 'Danh mục',
       everydayEssentials: 'Thiết Yếu Hàng Ngày',
       everydayDesc: 'Những tác phẩm được thiết kế một cách chu đáo hòa nhập liền mạch vào tủ quần áo hàng ngày của bạn. Những trang phục đa năng này kết hợp sự thoải mái với sự tinh tế, có đường nếp gấp tinh tế thêm kết cấu và chuyển động cho những đường nét cổ điển.',
       statementPieces: 'Tác Phẩm Nổi Bật',
@@ -1330,6 +1491,42 @@ const translations: Record<Language, Translation> = {
       customDesc: 'Chắc chắn rồi! Chúng tôi cung cấp dịch vụ nếp gấp tùy chỉnh. Liên hệ với chúng tôi để thảo luận về tầm nhìn của bạn.',
       whatIsReturnPolicy: 'Chính Sách Hoàn Trả Của Bạn Là Gì?',
       returnDesc: 'Chúng tôi chấp nhận trả hàng trong vòng 14 ngày kể từ ngày giao hàng đối với các mặt hàng chưa mặc còn thẻ.'
+    },
+    abaya: {
+      title: 'Bộ Sưu Tập Abaya',
+      subtitle: 'Vẻ đẹp truyền thống thanh lịch',
+      culturalRespect: 'Tôn trọng văn hóa & thấu hiểu',
+      culturalRespectDesc: 'Chúng tôi tôn trọng văn hóa Hồi giáo. Dòng Abaya được chế tác tinh tế, đề cao sự kín đáo và phẩm giá.',
+      whyAbayaSection: 'Lý do thiết lập khu vực riêng',
+      whyAbayaDesc: 'Nhằm đáp ứng nhu cầu của khách hàng Hồi giáo, chúng tôi thiết kế các mẫu tuân thủ quy chuẩn trang phục Hồi giáo, đồng thời giữ vững thẩm mỹ và chất lượng.',
+      islamicCompliance: 'Tuân thủ trang phục Hồi giáo',
+      islamicComplianceDesc: 'Che phủ kín đáo, phom rộng rãi, độ dài phù hợp và chất liệu không xuyên thấu, mang lại sự thoải mái và tự tin.',
+      productShowcase: 'Bộ sưu tập Abaya',
+      classicAbaya: 'Abaya Cổ Điển',
+      classicAbayaDesc: 'Đường nét uyển chuyển, rủ mềm thanh lịch. Chất liệu crepe cao cấp với nếp gấp tinh tế.',
+      embroideredAbaya: 'Abaya Thêu Tay',
+      embroideredAbayaDesc: 'Chi tiết thêu tay tinh xảo ở tay áo và gấu. Chiffon mềm mại cùng họa tiết truyền thống.',
+      modernAbaya: 'Abaya Hiện Đại',
+      modernAbayaDesc: 'Nếp gấp cấu trúc và yếu tố kiến trúc, dung hòa sự kín đáo với phong cách hiện đại.',
+      premiumFabric: 'Chất liệu cao cấp',
+      premiumFabricDesc: 'Thoáng khí, thoải mái, che phủ tốt và rủ đẹp; bền bỉ, dễ chịu khi mặc.',
+      designPhilosophy: 'Triết lý thiết kế',
+      designPhilosophyDesc: 'Tôn trọng truyền thống, kết hợp yếu tố đương đại để cân bằng công năng và thẩm mỹ.',
+      culturalSensitivity: 'Cam kết nhạy cảm văn hóa',
+      culturalSensitivityDesc: 'Hợp tác với cố vấn Hồi giáo để đảm bảo sự chuẩn mực và phù hợp trong mô tả và thiết kế.',
+      customerCare: 'Chăm sóc khách hàng tận tâm',
+      customerCareDesc: 'Hiểu rõ yêu cầu trang phục Hồi giáo, hỗ trợ bạn tìm mẫu Abaya phù hợp.',
+      traditionalLabel: 'Truyền thống',
+      artisanCraftedLabel: 'Thủ công tinh xảo',
+      contemporaryLabel: 'Đương đại',
+      featureTimelessDesign: 'Thiết kế vượt thời gian',
+      featureModestFit: 'Phom dáng kín đáo',
+      featureHandEmbroidery: 'Thêu tay',
+      featureIntricatePatterns: 'Họa tiết tinh xảo',
+      featureIslamicArtistry: 'Mỹ học Hồi giáo',
+      featureArchitectural: 'Kiến trúc',
+      featureStructuredPleats: 'Nếp gấp cấu trúc',
+      featureModernElegance: 'Thanh lịch hiện đại'
     }
   },
   ms: {
@@ -1338,7 +1535,8 @@ const translations: Record<Language, Translation> = {
       brandStory: 'Kisah Jenama',
       products: 'Produk',
       store: 'Kedai',
-      contact: 'Hubungi'
+      contact: 'Hubungi',
+      abaya: 'Abaya'
     },
     language: {
       en: 'English',
@@ -1347,6 +1545,7 @@ const translations: Record<Language, Translation> = {
       vi: 'Tiếng Việt',
       ms: 'Bahasa Melayu',
       fr: 'Français',
+      id: 'Bahasa Indonesia',
       ar: 'العربية'
     },
     hero: {
@@ -1446,6 +1645,7 @@ const translations: Record<Language, Translation> = {
       discoverCollection: 'Temui koleksi seni lipatan kami',
       everyFoldTellsStory: 'Setiap Lipatan Menceritakan Kisah',
       collectionDesc: 'Koleksi kami yang teliti diperhalus mewakili kemuncak kraftangan lipatan. Setiap keping direka untuk melampaui musim, menawarkan keanggunan abadi melalui kuasa transformasi lipatan.',
+      categoryLabel: 'Kategori',
       everydayEssentials: 'Keperluan Harian',
       everydayDesc: 'Keping yang direka dengan teliti untuk bergabung secara lancar ke dalam lemari pakaian harian anda. Pakaian serba guna ini menggabungkan keselesaan dengan kecanggihan, menampilkan lipatan halus yang menambah tekstur dan pergerakan kepada sila klasik.',
       statementPieces: 'Keping Pernyataan',
@@ -1596,6 +1796,42 @@ const translations: Record<Language, Translation> = {
       customDesc: 'Sudah tentu! Kami menyediakan perkhidmatan lipatan tersuai. Hubungi kami untuk membincangkan visi anda.',
       whatIsReturnPolicy: 'Apakah dasar pemulangan anda?',
       returnDesc: 'Kami menerima pemulangan dalam masa 14 hari selepas penghantaran untuk barang yang tidak dipakai dengan tag terpasang.'
+    },
+    abaya: {
+      title: 'Koleksi Abaya',
+      subtitle: 'Pilihan tradisional yang elegan',
+      culturalRespect: 'Penghormatan & Pemahaman Budaya',
+      culturalRespectDesc: 'Kami menghormati budaya Muslim. Koleksi Abaya direka dengan teliti, menekankan kesopanan dan maruah.',
+      whyAbayaSection: 'Sebab menubuhkan seksyen khas',
+      whyAbayaDesc: 'Untuk memenuhi keperluan pelanggan Muslim, kami memastikan reka bentuk mematuhi garis panduan pakaian Islam sambil mengekalkan estetika dan kualiti.',
+      islamicCompliance: 'Mematuhi pakaian Islam',
+      islamicComplianceDesc: 'Liputan sopan, siluet longgar, panjang sesuai, fabrik tidak tembus; selesa dan meyakinkan.',
+      productShowcase: 'Koleksi Abaya',
+      classicAbaya: 'Abaya Klasik',
+      classicAbayaDesc: 'Garis mengalun dan drape anggun. Fabrik crepe premium dengan lipatan halus.',
+      embroideredAbaya: 'Abaya Sulaman',
+      embroideredAbayaDesc: 'Butiran sulaman tangan pada pergelangan dan hem. Chiffon lembut dengan corak tradisional.',
+      modernAbaya: 'Abaya Moden',
+      modernAbayaDesc: 'Lipatan berstruktur dan elemen seni bina; mengekalkan kesopanan dengan gaya moden.',
+      premiumFabric: 'Fabrik Premium',
+      premiumFabricDesc: 'Bernafas, selesa, liputan sesuai dan drape cantik; tahan lama dan sedap dipakai.',
+      designPhilosophy: 'Falsafah Reka Bentuk',
+      designPhilosophyDesc: 'Menghormati tradisi sambil menggabungkan elemen kontemporari untuk keseimbangan fungsi dan estetika.',
+      culturalSensitivity: 'Komitmen Kepekaan Budaya',
+      culturalSensitivityDesc: 'Bekerjasama dengan penasihat Muslim bagi memastikan keaslian dan kesesuaian.',
+      customerCare: 'Khidmat Pelanggan',
+      customerCareDesc: 'Memahami keperluan pakaian Islam, membantu anda mencari Abaya yang sesuai.',
+      traditionalLabel: 'Tradisional',
+      artisanCraftedLabel: 'Buatan Tukang',
+      contemporaryLabel: 'Kontemporari',
+      featureTimelessDesign: 'Reka bentuk abadi',
+      featureModestFit: 'Potongan sopan',
+      featureHandEmbroidery: 'Sulaman tangan',
+      featureIntricatePatterns: 'Corak terperinci',
+      featureIslamicArtistry: 'Estetika Islam',
+      featureArchitectural: 'Berunsur seni bina',
+      featureStructuredPleats: 'Lipatan berstruktur',
+      featureModernElegance: 'Keanggunan moden'
     }
   },
   fr: {
@@ -1604,7 +1840,8 @@ const translations: Record<Language, Translation> = {
       brandStory: 'Histoire de la Marque',
       products: 'Produits',
       store: 'Boutique',
-      contact: 'Contact'
+      contact: 'Contact',
+      abaya: 'Abaya'
     },
     language: {
       en: 'English',
@@ -1613,6 +1850,7 @@ const translations: Record<Language, Translation> = {
       vi: 'Tiếng Việt',
       ms: 'Bahasa Melayu',
       fr: 'Français',
+      id: 'Bahasa Indonesia',
       ar: 'العربية'
     },
     hero: {
@@ -1712,6 +1950,7 @@ const translations: Record<Language, Translation> = {
       discoverCollection: 'Découvrez notre collection d\'art du plissage',
       everyFoldTellsStory: 'Chaque Pli Raconte une Histoire',
       collectionDesc: 'Notre collection soigneusement organisée représente l\'apogée de l\'artisanat du plissage. Chaque pièce est conçue pour transcender les saisons, offrant une élégance intemporelle grâce au pouvoir transformateur du plissage.',
+      categoryLabel: 'Catégorie',
       everydayEssentials: 'Essentiels Quotidiens',
       everydayDesc: 'Des pièces méticuleusement conçues pour s\'intégrer harmonieusement dans votre garde-robe quotidienne. Ces vêtements polyvalents combinent confort et sophistication, avec des plis subtils qui ajoutent de la texture et du mouvement aux silhouettes classiques.',
       statementPieces: 'Pièces Remarquables',
@@ -1862,15 +2101,52 @@ const translations: Record<Language, Translation> = {
       customDesc: 'Absolument ! Nous proposons des services de plissage personnalisé. Contactez-nous pour discuter de votre vision.',
       whatIsReturnPolicy: 'Quelle est Votre Politique de Retour ?',
       returnDesc: 'Nous acceptons les retours dans les 14 jours suivant la livraison pour les articles non portés avec étiquettes attachées.'
+    },
+    abaya: {
+      title: 'Collection Abaya',
+      subtitle: 'Élégance traditionnelle',
+      culturalRespect: 'Respect & compréhension culturelle',
+      culturalRespectDesc: 'Nous respectons la culture musulmane. La collection Abaya est conçue avec délicatesse, alliant modestie et dignité.',
+      whyAbayaSection: 'Pourquoi une section dédiée',
+      whyAbayaDesc: 'Pour répondre aux besoins spécifiques des clientes musulmanes, nous assurons des modèles conformes aux règles vestimentaires islamiques tout en conservant esthétique et qualité.',
+      islamicCompliance: 'Conformité vestimentaire islamique',
+      islamicComplianceDesc: 'Couverture modeste, silhouettes amples, longueurs appropriées et tissus non transparents — confort et assurance.',
+      productShowcase: 'Notre collection Abaya',
+      classicAbaya: 'Abaya Classique',
+      classicAbayaDesc: 'Lignes fluides et drapé élégant. Crêpe premium avec plis subtils.',
+      embroideredAbaya: 'Abaya Brodée',
+      embroideredAbayaDesc: 'Brodage artisanal exquis aux poignets et à l’ourlet. Chiffon doux et motifs traditionnels.',
+      modernAbaya: 'Abaya Moderne',
+      modernAbayaDesc: 'Plis structurés et éléments architecturaux — modestie et modernité.',
+      premiumFabric: 'Tissu Premium',
+      premiumFabricDesc: 'Respirant, confortable, couvrant et drapé harmonieux ; durable et agréable à porter.',
+      designPhilosophy: 'Philosophie du design',
+      designPhilosophyDesc: 'Respect des traditions et intégration d’éléments contemporains pour un équilibre entre fonction et beauté.',
+      culturalSensitivity: 'Engagement de sensibilité culturelle',
+      culturalSensitivityDesc: 'Collaboration avec des conseillers musulmans pour garantir authenticité et adéquation.',
+      customerCare: 'Service Client Dédié',
+      customerCareDesc: 'Compréhension des exigences vestimentaires islamiques et accompagnement pour trouver l’abaya idéale.',
+      traditionalLabel: 'Traditionnel',
+      artisanCraftedLabel: 'Artisanat',
+      contemporaryLabel: 'Contemporain',
+      featureTimelessDesign: 'Design intemporel',
+      featureModestFit: 'Coupe sobre',
+      featureHandEmbroidery: 'Broderie à la main',
+      featureIntricatePatterns: 'Motifs délicats',
+      featureIslamicArtistry: 'Esthétique islamique',
+      featureArchitectural: 'Architectural',
+      featureStructuredPleats: 'Plis structurés',
+      featureModernElegance: 'Élégance moderne'
     }
   },
-  ar: {
+  id: {
     nav: {
-      home: 'الرئيسية',
-      brandStory: 'قصة العلامة',
-      products: 'المنتجات',
-      store: 'المتجر',
-      contact: 'اتصل بنا'
+      home: 'Beranda',
+      brandStory: 'Kisah Merek',
+      products: 'Produk',
+      store: 'Toko',
+      contact: 'Kontak',
+      abaya: 'Abaya'
     },
     language: {
       en: 'English',
@@ -1879,6 +2155,307 @@ const translations: Record<Language, Translation> = {
       vi: 'Tiếng Việt',
       ms: 'Bahasa Melayu',
       fr: 'Français',
+      id: 'Bahasa Indonesia',
+      ar: 'العربية'
+    },
+    hero: {
+      title: 'Plearance',
+      subtitle: 'Lipatan Elegan, Keindahan Abadi',
+      cta: 'Jelajahi Koleksi'
+    },
+    footer: {
+      brandName: 'Plearance',
+      description: 'Menciptakan busana berlipit elegan dengan perpaduan kerajinan Jepang tradisional dan keberlanjutan modern.',
+      quickLinks: 'Tautan Cepat',
+      contact: 'Kontak',
+      followUs: 'Ikuti Kami',
+      rights: 'Hak cipta dilindungi.'
+    },
+    home: {
+      heroTitle: 'Menemukan Seni Pelipatan',
+      heroSubtitle: 'Di mana kerajinan Jepang bertemu keanggunan kontemporer',
+      exploreCollection: 'Jelajahi Koleksi',
+      viewProducts: 'Lihat Produk',
+      craftsmanshipTitle: 'Kerajinan Tinggi',
+      craftsmanshipDesc: 'Setiap karya dibuat dengan teliti oleh pengrajin terampil menggunakan teknik tradisional turun-temurun.',
+      sustainabilityTitle: 'Mode Berkelanjutan',
+      sustainabilityDesc: 'Kami menciptakan karya abadi yang melampaui tren, mendorong konsumsi yang bijak.',
+      eleganceTitle: 'Keanggunan Abadi',
+      eleganceDesc: 'Desain berlipit kami memadukan keanggunan dan kenyamanan untuk gaya modern.',
+      creativeExcellence: 'Keunggulan Kreatif',
+      yuiNakahara: 'Yui Nakahara',
+      pleatsQuote: '"Lipatan dan struktur menghidupkan busana"',
+      yuiBio: 'Lahir di Ōita, Jepang. Lulusan Bunka Fashion College. Pernah berkarya di ISSEY MIYAKE pada lini PLEATS PLEASE, dari perencanaan hingga pengembangan pola dan prototipe.',
+      yuiPhilosophy: 'Berpusat pada keseimbangan fungsi dan keindahan—menekankan struktur, proporsi, dan penggunaan kain yang berkelanjutan.',
+      brandStory: 'Kisah Merek',
+      contactUs: 'Hubungi Kami',
+      manufacturingExcellence: 'Keunggulan Produksi',
+      exceptionalPleatedArtistry: 'Seni lipatan tingkat tinggi',
+      manufacturingDesc1: 'Kami memilih mitra manufaktur istimewa dengan keahlian mendalam dalam teknik pelipatan.',
+      manufacturingDesc2: 'Mesin pelipatan mutakhir memastikan setiap lipatan presisi dan tahan lama.',
+      manufacturingDesc3: 'Teknologi pengaturan panas dan penekanan khusus mengunci lipatan secara permanen.',
+      philosophy: 'Filosofi',
+      structuredArtistry: 'Seni terstruktur yang anggun',
+      brandPhilosophy: 'PLEARANCE mengeksplorasi struktur, gerak, dan kenyamanan melalui lipatan—dari kebutuhan harian hingga karya pernyataan.'
+    },
+    brandStory: {
+      title: 'Kisah Merek',
+      subtitle: 'Seni Pelipatan',
+      intro: 'Lahir di Tokyo, Plearance memadukan teknik lipatan tradisional Jepang dengan desain kontemporer.',
+      heritageTitle: 'Warisan',
+      heritageDesc: 'Kami menghormati seni tekstil Jepang berusia berabad-abad dengan perhatian pada detail.',
+      philosophyTitle: 'Filosofi',
+      philosophyDesc: 'Menciptakan busana yang memadukan keindahan estetika dan keunggulan fungsional.',
+      craftsmanshipTitle: 'Kerajinan',
+      craftsmanshipDesc: 'Setiap lipatan dihitung dan dieksekusi oleh pengrajin berpengalaman.',
+      meetArtisans: 'Temui Pengrajin',
+      fusionOfPleatsAndElegance: 'Perpaduan Lipatan dan Keanggunan',
+      pleatsArt: 'Lipatan',
+      pleatsDesc: 'Seni melipat kain\nMencipta struktur dan gerak',
+      eleganceArt: 'Keanggunan',
+      eleganceDesc: 'Keindahan sederhana\nKlasik dan abadi',
+      whereStructuredArtistry: 'Seni terstruktur bertemu keanggunan ringan',
+      artOfTransformation: 'Seni Transformasi',
+      transformationDesc1: 'Setiap lipatan bercerita tentang keahlian, setiap siluet memancarkan keindahan abadi.',
+      transformationDesc2: 'Filosofi kami merayakan kekuatan transformatif lipatan—fungsi dan estetika berjalan bersama.',
+      transformationDesc3: 'Kami mencipta koleksi yang melampaui musim, bertumbuh bersama pemakainya.',
+      fromConceptToCreation: 'Dari Konsep ke Karya',
+      conceptDesc1: 'Kami memilih kain terbaik yang mampu menahan lipatan sekaligus mempertahankan gerak alami.',
+      conceptDesc2: 'Proses pelipatan memerlukan waktu, suhu, dan tekanan yang tepat.',
+      conceptDesc3: 'Hasilnya adalah busana yang bergerak bersama Anda dan semakin indah saat dikenakan.',
+      heritageAndFuture: 'Warisan & Masa Depan',
+      rootedInTradition: 'Berakar pada tradisi, dirancang untuk hari esok',
+      japaneseHeritage: 'Warisan Jepang',
+      japaneseHeritageDesc: 'Ketelitian dan perhatian pada detail tampak di setiap lipatan.',
+      modernInnovation: 'Inovasi Modern',
+      modernInnovationDesc: 'Menggabungkan teknik tradisional dan teknologi modern untuk mendorong batas kain berlipit.',
+      sustainableFuture: 'Masa Depan Berkelanjutan',
+      sustainableFutureDesc: 'Keberlanjutan hadir dalam setiap keputusan—dari kain hingga desain abadi.'
+    },
+    products: {
+      title: 'Produk',
+      subtitle: 'Koleksi Lipatan Elegan',
+      allProducts: 'Semua Produk',
+      categories: {
+        dresses: 'Gaun',
+        skirts: 'Rok',
+        tops: 'Atasan',
+        accessories: 'Aksesori'
+      },
+      filters: {
+        color: 'Warna',
+        size: 'Ukuran',
+        price: 'Harga',
+        apply: 'Terapkan',
+        reset: 'Atur Ulang'
+      },
+      discoverCollection: 'Jelajahi koleksi seni lipatan kami',
+      everyFoldTellsStory: 'Setiap Lipatan Bercerita',
+      collectionDesc: 'Koleksi kurasi kami mewakili puncak kerajinan lipatan dengan desain abadi.',
+      categoryLabel: 'Kategori',
+      everydayEssentials: 'Kebutuhan Harian',
+      everydayDesc: 'Desain nyaman dan rapi untuk dipakai setiap hari dengan lipatan halus.',
+      statementPieces: 'Karya Pernyataan',
+      statementDesc: 'Desain berani dengan pola lipatan inovatif dan bentuk pahat.',
+      professionalCollection: 'Koleksi Profesional',
+      professionalDesc: 'Potongan rapi untuk profesional modern dengan detail lipatan yang berkelas.',
+      eveningElegance: 'Keanggunan Malam',
+      eveningDesc: 'Kain premium dan lipatan rumit untuk siluet dramatis di acara malam.',
+      comfortFit: 'Nyaman',
+      breathableFabric: 'Kain Bernapas',
+      easyCare: 'Perawatan Mudah',
+      architecturalDesign: 'Desain Arsitektural',
+      handFinished: 'Finishing Tangan',
+      limitedEdition: 'Edisi Terbatas',
+      officeReady: 'Siap Kantor',
+      wrinkleResistant: 'Anti Kusut',
+      travelFriendly: 'Ramah Perjalanan',
+      premiumFabric: 'Kain Premium',
+      intricatePleating: 'Lipatan Rumit',
+      specialOccasion: 'Acara Khusus',
+      artOfPerfectPleats: 'Seni Lipatan Sempurna',
+      fabricSelection: 'Pemilihan Kain',
+      fabricSelectionDesc: 'Kami memilih kain terbaik yang mampu menahan lipatan dan tetap bergerak alami.',
+      pleatFormation: 'Pembentukan Lipatan',
+      pleatFormationDesc: 'Perpaduan teknologi mutakhir dan teknik tradisional untuk lipatan presisi.',
+      heatSetting: 'Pengaturan Panas',
+      heatSettingDesc: 'Penguncian lipatan melalui pengaturan suhu yang terkontrol.',
+      experiencePlearance: 'Rasakan Plearance',
+      experienceDesc: 'Setiap karya bukan sekadar pakaian—ini seni struktur dan puisi gerak.',
+      visitStore: 'Kunjungi Toko Kami'
+    },
+    store: {
+      title: 'Toko',
+      subtitle: 'Kunjungi Flagship Kami',
+      visitUs: 'Kunjungi Kami',
+      bookAppointment: 'Buat Janji',
+      location: 'Toko Flagship Tokyo',
+      hours: 'Jam Operasional',
+      features: 'Fitur Toko',
+      discoverCuratedCollection: 'Temukan koleksi kurasi kami',
+      experienceInPerson: 'Rasakan langsung kualitas dan detail lipatan',
+      tokyoFlagship: 'Flagship Tokyo',
+      storeAddress: 'Marunouchi, Chiyoda City, Tokyo, Jepang',
+      storeHours: 'Senin-Sabtu: 11:00-20:00 • Minggu: 12:00-19:00',
+      personalJourney: 'Perjalanan Pribadi',
+      personalJourneyDesc1: 'Konsultasi penataan gaya personal sesuai kebutuhan Anda.',
+      personalJourneyDesc2: 'Layanan lipatan khusus untuk proyek unik Anda.',
+      personalJourneyDesc3: 'Penyesuaian dan perbaikan kecil sesuai permintaan.',
+      bespokeServices: 'Layanan Khusus',
+      personalStyling: 'Penataan Gaya Pribadi',
+      personalStylingDesc: 'Sesi privat dengan ahli gaya kami.',
+      customPleating: 'Lipatan Khusus',
+      customPleatingDesc: 'Wujudkan ide lewat pelipatan presisi.',
+      alterations: 'Penyesuaian',
+      alterationsDesc: 'Perbaikan detail dan penyelarasan fit.',
+      careInstructions: 'Perawatan',
+      careInstructionsDesc: 'Panduan perawatan agar lipatan tetap indah.',
+      shopAnywhere: 'Belanja di Mana Saja',
+      shopOnlineDesc1: 'Koleksi tersedia online.',
+      shopOnlineDesc2: 'Kirim ke seluruh dunia.',
+      shopOnlineDesc3: 'Dukungan pelanggan responsif.',
+      onlineContact: 'Kontak Online',
+      emailLabel: 'Email',
+      phoneLabel: 'Telepon',
+      whatsappLabel: 'WhatsApp',
+      beginJourney: 'Mulai Perjalanan',
+      beginJourneyDesc: 'Hubungi kami untuk saran produk atau janji temu di toko.',
+      contactUs: 'Hubungi Kami'
+    },
+    contacts: {
+      title: 'Kontak',
+      subtitle: 'Hubungi Kami',
+      getInTouch: 'Terhubung',
+      generalInquiries: 'Pertanyaan Umum',
+      storeAppointments: 'Janji di Toko',
+      pressMedia: 'Pers & Media',
+      businessInquiries: 'Kemitraan Bisnis',
+      visitUs: 'Kunjungi Kami',
+      sendMessage: 'Kirim Pesan',
+      letsTalk: 'Mari Berbicara',
+      name: 'Nama',
+      email: 'Email',
+      subject: 'Subjek',
+      phone: 'Telepon',
+      message: 'Pesan',
+      sendButton: 'Kirim',
+      sending: 'Mengirim...',
+      successMessage: 'Terima kasih! Kami akan membalas dalam 24 jam.',
+      errorMessage: 'Terjadi kesalahan. Coba lagi nanti.',
+      formIdError: 'Formspree belum dikonfigurasi. Setel VITE_FORMSPREE_ENDPOINT di .env.',
+      networkError: 'Kesalahan jaringan. Periksa koneksi Anda.',
+      faq: 'FAQ',
+      commonQuestions: 'Pertanyaan Umum',
+      careInstructions: 'Cara Merawat Busana Berlipit',
+      careInstructionsDesc: 'Cuci tangan lembut atau dry clean. Jangan setrika langsung pada lipatan.',
+      internationalShipping: 'Apakah ada pengiriman internasional?',
+      internationalShippingDesc: 'Ya, kami kirim ke seluruh dunia. Biaya dan waktu pengiriman bervariasi.',
+      customPleating: 'Bisakah saya minta lipatan khusus?',
+      customPleatingDesc: 'Tentu. Hubungi kami untuk mendiskusikan ide Anda.',
+      returnPolicy: 'Apa kebijakan pengembalian?',
+      returnPolicyDesc: 'Pengembalian diterima dalam 14 hari untuk barang belum dipakai dan berlabel.',
+      letsConnect: 'Mari Terhubung',
+      createSomethingBeautiful: 'Ciptakan Sesuatu yang Indah',
+      weWouldLoveToHear: 'Kami Senang Mendengar Anda',
+      responseTime: 'Waktu Respons',
+      within24Hours: 'Dalam 24 Jam',
+      highResImages: 'Gambar Resolusi Tinggi',
+      availableUponRequest: 'Tersedia atas Permintaan',
+      partnerships: 'Kemitraan',
+      wholesaleCollaboration: 'Kolaborasi Grosir',
+      tokyoFlagshipStore: 'Toko Flagship Tokyo',
+      address: 'Alamat',
+      addressDetails: 'Marunouchi, Chiyoda City, Tokyo, Jepang',
+      hours: 'Jam',
+      hoursDetails: 'Senin-Sabtu: 11:00-20:00 • Minggu: 12:00-19:00',
+      closedOnHolidays: 'Tutup saat libur',
+      storeFeatures: 'Fitur Toko',
+      personalStylingConsultations: 'Konsultasi Penataan Pribadi',
+      customPleatingServices: 'Layanan Lipatan Khusus',
+      alterationsAdjustments: 'Penyesuaian & Perbaikan',
+      privateShoppingAppointments: 'Janji Belanja Privat',
+      getDirections: 'Petunjuk Arah',
+      letsStartConversation: 'Mulai Percakapan',
+      nameLabel: 'Nama',
+      emailLabel: 'Email',
+      subjectLabel: 'Subjek',
+      phoneLabel: 'Telepon',
+      messageLabel: 'Pesan',
+      yourFullName: 'Nama Lengkap Anda',
+      yourEmail: 'Email Anda',
+      selectSubject: 'Pilih Subjek',
+      generalInquiry: 'Pertanyaan Umum',
+      storeAppointment: 'Janji di Toko',
+      customOrder: 'Pesanan Khusus',
+      pressMediaContact: 'Kontak Pers & Media',
+      businessPartnership: 'Kemitraan Bisnis',
+      other: 'Lainnya',
+      phonePlaceholder: 'Nomor telepon Anda (opsional)',
+      messagePlaceholder: 'Tulis pesan Anda...',
+      frequentlyAsked: 'Sering Ditanyakan',
+      howToCare: 'Bagaimana merawat busana berlipit?',
+      careDesc: 'Lipatan dirancang untuk bertahan. Cuci tangan lembut atau dry clean.',
+      doYouShip: 'Apakah kalian kirim internasional?',
+      shippingDesc: 'Ya, ke seluruh dunia. Biaya dan waktu bergantung tujuan.',
+      canRequestCustom: 'Bisakah meminta lipatan khusus?',
+      customDesc: 'Tentu. Hubungi kami untuk mendiskusikan.',
+      whatIsReturnPolicy: 'Apa kebijakan pengembalian?',
+      returnDesc: '14 hari setelah pengiriman untuk barang belum dipakai dan berlabel.'
+    },
+    abaya: {
+      title: 'Koleksi Abaya Muslim',
+      subtitle: 'Busana Tradisional yang Elegan',
+      culturalRespect: 'Penghormatan & Pemahaman Budaya',
+      culturalRespectDesc: 'Kami menghormati budaya Muslim. Koleksi Abaya dirancang dengan penuh sensitivitas terhadap nilai-nilai Islam untuk mencerminkan martabat dan kesopanan.',
+      whyAbayaSection: 'Mengapa Kami Membuat Koleksi Khusus Ini',
+      whyAbayaDesc: 'Untuk memenuhi kebutuhan pelanggan Muslim, kami menghadirkan koleksi Abaya kurasi yang mematuhi aturan berpakaian Islam sambil menjaga estetika dan kualitas.',
+      islamicCompliance: 'Kepatuhan Busana Islam',
+      islamicComplianceDesc: 'Liputan yang sopan, siluet longgar, panjang yang tepat, serta kain tidak tembus pandang untuk kenyamanan dan rasa percaya diri.',
+      productShowcase: 'Koleksi Abaya Kami',
+      classicAbaya: 'Abaya Klasik',
+      classicAbayaDesc: 'Desain abadi dengan garis mengalun dan drape elegan. Crepe premium dengan lipatan halus.',
+      embroideredAbaya: 'Abaya Bersulam',
+      embroideredAbayaDesc: 'Sulaman tangan yang indah pada manset dan tepi. Chiffon lembut dengan motif tradisional.',
+      modernAbaya: 'Abaya Modern',
+      modernAbayaDesc: 'Interpretasi kontemporer dengan lipatan terstruktur dan elemen arsitektural.',
+      premiumFabric: 'Kain Premium',
+      premiumFabricDesc: 'Bernapas dan nyaman, jatuh indah sekaligus memberi liputan yang tepat. Tahan lama dan sedap dipakai.',
+      designPhilosophy: 'Filosofi Desain',
+      designPhilosophyDesc: 'Menghormati tradisi sambil memasukkan elemen kontemporer untuk meningkatkan fungsi dan keindahan.',
+      culturalSensitivity: 'Komitmen Kepekaan Budaya',
+      culturalSensitivityDesc: 'Bekerja dengan konsultan Muslim untuk memastikan keaslian dan kesesuaian.',
+      customerCare: 'Layanan Pelanggan',
+      customerCareDesc: 'Memahami kebutuhan busana Islam dan siap membantu Anda menemukan abaya yang tepat.',
+      traditionalLabel: 'Tradisional',
+      artisanCraftedLabel: 'Buatan Pengrajin',
+      contemporaryLabel: 'Kontemporer',
+      featureTimelessDesign: 'Desain Abadi',
+      featureModestFit: 'Potongan Sopan',
+      featureHandEmbroidery: 'Sulaman Tangan',
+      featureIntricatePatterns: 'Motif Rumit',
+      featureIslamicArtistry: 'Estetika Islam',
+      featureArchitectural: 'Arsitektural',
+      featureStructuredPleats: 'Lipatan Terstruktur',
+      featureModernElegance: 'Keanggunan Modern'
+    }
+  },
+  ar: {
+    nav: {
+      home: 'الرئيسية',
+      brandStory: 'قصة العلامة',
+      products: 'المنتجات',
+      store: 'المتجر',
+      contact: 'اتصل بنا',
+      abaya: 'عباية'
+    },
+    language: {
+      en: 'English',
+      zh: '中文',
+      ja: '日本語',
+      vi: 'Tiếng Việt',
+      ms: 'Bahasa Melayu',
+      fr: 'Français',
+      id: 'الإندونيسية',
       ar: 'العربية'
     },
     hero: {
@@ -1978,6 +2555,7 @@ const translations: Record<Language, Translation> = {
       discoverCollection: 'اكتشف مجموعة فن الطيات لدينا',
       everyFoldTellsStory: 'كل طية تحكي قصة',
       collectionDesc: 'مجموعتنا المنتقاة بعناية تمثل ذروة حرفية الطيات. كل قطعة مصممة لتتجاوز المواسم، وتقدم أناقة خالدة من خلال قوة التحول التي تمتلكها الطيات.',
+      categoryLabel: 'الفئة',
       everydayEssentials: 'الأساسيات اليومية',
       everydayDesc: 'قطع مصممة بدقة لتندمج بسلاسة في خزانة ملابسك اليومية. هذه الملابس متعددة الاستخدامات تجمع بين الراحة والرقي، مع طيات دقيقة تضيف نسيجاً وحركة إلى السيلويت الكلاسيكية.',
       statementPieces: 'قطع بيان',
@@ -2128,6 +2706,42 @@ const translations: Record<Language, Translation> = {
       customDesc: 'بالتأكيد! نحن نقدم خدمات الطي المخصص. اتصل بنا لمناقشة رؤيتك.',
       whatIsReturnPolicy: 'ما هي سياسة الإرجاع الخاصة بكم؟',
       returnDesc: 'نقبل الإرجاع خلال 14 يومًا من التسليم للعناصر غير الملبوسة مع العلامات المرفقة.'
+    },
+    abaya: {
+      title: 'مجموعة العباءات',
+      subtitle: 'أناقة تقليدية راقية',
+      culturalRespect: 'احترام وفهم ثقافي',
+      culturalRespectDesc: 'نحترم الثقافة الإسلامية وقيمها. تُصمَّم العباءات بعناية لتجسيد الاحتشام والوقار.',
+      whyAbayaSection: 'سبب تخصيص هذه الصفحة',
+      whyAbayaDesc: 'لتلبية احتياجات العملاء المسلمين، نقدّم نماذج تراعي ضوابط الزي الإسلامي مع الحفاظ على الجماليات والجودة.',
+      islamicCompliance: 'الامتثال للزي الإسلامي',
+      islamicComplianceDesc: 'تغطية محتشمة، قصّات واسعة، أطوال مناسبة وأقمشة غير شفافة — راحة وثقة.',
+      productShowcase: 'تشكيلة العباءات',
+      classicAbaya: 'عباية كلاسيكية',
+      classicAbayaDesc: 'خطوط انسيابية ودروب أنيق. قماش كريب فاخر بطيات دقيقة.',
+      embroideredAbaya: 'عباية مطرزة',
+      embroideredAbayaDesc: 'تطريز يدوي متقن على الأكمام والحاشية. شيفون ناعم بزخارف تقليدية.',
+      modernAbaya: 'عباية عصرية',
+      modernAbayaDesc: 'طيات مُهيكلة وعناصر معمارية — احتشام بطابع معاصر.',
+      premiumFabric: 'أقمشة فاخرة',
+      premiumFabricDesc: 'قابلة للتنفس ومريحة وتغطي جيدًا مع دروب جميل؛ متينة وملائمة للبس.',
+      designPhilosophy: 'فلسفة التصميم',
+      designPhilosophyDesc: 'احترام التقليد مع دمج عناصر معاصرة لتحقيق توازن بين الوظيفة والجمال.',
+      culturalSensitivity: 'التزام بالحساسية الثقافية',
+      culturalSensitivityDesc: 'نتعاون مع مستشارين مسلمين لضمان الأصالة والملاءمة في التعبير.',
+      customerCare: 'عناية بالعملاء',
+      customerCareDesc: 'نفهم متطلبات الزي الإسلامي ونساعدك في اختيار العباية المناسبة.',
+      traditionalLabel: 'تقليدي',
+      artisanCraftedLabel: 'مصنوع بحرفية',
+      contemporaryLabel: 'معاصر',
+      featureTimelessDesign: 'تصميم خالد',
+      featureModestFit: 'قصّة محتشمة',
+      featureHandEmbroidery: 'تطريز يدوي',
+      featureIntricatePatterns: 'نقوش متقنة',
+      featureIslamicArtistry: 'جمالية إسلامية',
+      featureArchitectural: 'طابع معماري',
+      featureStructuredPleats: 'طيات مُهيكلة',
+      featureModernElegance: 'أناقة عصرية'
     }
   }
 }

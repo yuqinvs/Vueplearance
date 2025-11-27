@@ -10,6 +10,7 @@
           <RouterLink to="/" class="nav-link">{{ t.home }}</RouterLink>
           <RouterLink to="/brand-story" class="nav-link">{{ t.brandStory }}</RouterLink>
           <RouterLink to="/products" class="nav-link">{{ t.products }}</RouterLink>
+          <RouterLink to="/abaya" class="nav-link">{{ t.abaya }}</RouterLink>
           <RouterLink to="/store" class="nav-link">{{ t.store }}</RouterLink>
           <RouterLink to="/contacts" class="nav-link">{{ t.contact }}</RouterLink>
           <LanguageSwitcher />
@@ -26,6 +27,7 @@
         <RouterLink to="/" class="nav-link" @click="closeMenu">{{ t.home }}</RouterLink>
         <RouterLink to="/brand-story" class="nav-link" @click="closeMenu">{{ t.brandStory }}</RouterLink>
         <RouterLink to="/products" class="nav-link" @click="closeMenu">{{ t.products }}</RouterLink>
+        <RouterLink to="/abaya" class="nav-link" @click="closeMenu">{{ t.abaya }}</RouterLink>
         <RouterLink to="/store" class="nav-link" @click="closeMenu">{{ t.store }}</RouterLink>
         <RouterLink to="/contacts" class="nav-link" @click="closeMenu">{{ t.contact }}</RouterLink>
         <div class="nav-mobile-language">

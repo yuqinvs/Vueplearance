@@ -33,7 +33,7 @@ const languageStore = useLanguageStore()
 const isOpen = ref(false)
 const dropdownRef = ref<HTMLElement | null>(null)
 
-const languages: Language[] = ['en', 'zh', 'ja', 'vi', 'ms', 'fr', 'ar']
+const languages: Language[] = ['en', 'zh', 'ja', 'vi', 'ms', 'fr', 'id', 'ar']
 
 const toggleDropdown = () => {
   isOpen.value = !isOpen.value

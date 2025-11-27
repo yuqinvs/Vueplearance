@@ -19,7 +19,7 @@
     <!-- Designer Introduction -->
     <section class="section-editorial">
       <div class="container-minimal">
-        <div class="grid-editorial">
+        <div class="grid-editorial" v-if="!languageStore.isRTL">
           <div class="editorial-text slide-in-left">
             <div class="text-caption">{{ t.home.creativeExcellence }}</div>
             <h2 class="heading-display text-serif space-y-sm">
@@ -47,6 +47,36 @@
           </div>
           <div class="editorial-image slide-in-right">
             <img src="@/assets/img/designer.webp" alt="Designer Yui Nakahara" class="editorial-image-content" />
+          </div>
+        </div>
+        <div class="grid-editorial" v-else>
+          <div class="editorial-image slide-in-left">
+            <img src="@/assets/img/designer.webp" alt="Designer Yui Nakahara" class="editorial-image-content" />
+          </div>
+          <div class="editorial-text slide-in-right">
+            <div class="text-caption">{{ t.home.creativeExcellence }}</div>
+            <h2 class="heading-display text-serif space-y-sm">
+              {{ t.home.yuiNakahara }}
+            </h2>
+            <div class="space-y-md">
+              <blockquote class="text-body text-serif">
+                "{{ t.home.pleatsQuote }}"
+              </blockquote>
+              <p class="text-body">
+                {{ t.home.yuiBio }}
+              </p>
+              <p class="text-body">
+                {{ t.home.yuiPhilosophy }}
+              </p>
+              <div class="space-y-sm">
+                <RouterLink to="/brand-story" class="btn-minimal">
+                  {{ t.home.brandStory }}
+                </RouterLink>
+                <RouterLink to="/contacts" class="btn-minimal btn-minimal-inverted">
+                  {{ t.home.contactUs }}
+                </RouterLink>
+              </div>
+            </div>
           </div>
         </div>
       </div>

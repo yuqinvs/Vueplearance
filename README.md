@@ -33,6 +33,17 @@ This project transforms the original static website into a sophisticated digital
 - **Brand Letter Interactions**: Playful typography on brand name
 - **Contact Form**: Integrated with validation and status feedback
 
+## 🌍 Language Support
+
+- English
+- 中文
+- 日本語
+- Tiếng Việt
+- Bahasa Melayu
+- Français
+- Bahasa Indonesia
+- العربية (RTL)
+
 ## 🚀 Getting Started
 
 ### Prerequisites
