@@ -31,7 +31,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue'
+import { ref, onMounted, computed, onUnmounted } from 'vue'
 import { useLanguageStore } from '@/stores/language'
 import translations from '@/locales/translations'
 
@@ -44,6 +44,58 @@ const isLowEndDevice = prefersReducedMotion || hardwareConcurrency <= 4 || devic
 const particleCount = isLowEndDevice ? 12 : 30
 const languageStore = useLanguageStore()
 const t = computed(() => translations[languageStore.currentLanguage])
+
+let lockCount = 0
+let lockedScrollY = 0
+let prevPosition = ''
+let prevTop = ''
+let prevWidth = ''
+let prevOverflow = ''
+let prevPaddingRight = ''
+const keysToBlock = ['ArrowUp','ArrowDown','Space','PageUp','PageDown','Home','End']
+const onWheel = (e: Event) => e.preventDefault()
+const onTouch = (e: Event) => e.preventDefault()
+const onKey = (e: KeyboardEvent) => { if (keysToBlock.includes(e.key)) e.preventDefault() }
+const onScroll = () => { window.scrollTo(0, lockedScrollY) }
+
+const lockScroll = () => {
+  if (lockCount > 0) { lockCount++; return }
+  lockCount = 1
+  lockedScrollY = window.scrollY
+  prevPosition = document.body.style.position
+  prevTop = document.body.style.top
+  prevWidth = document.body.style.width
+  prevOverflow = document.body.style.overflow
+  prevPaddingRight = document.body.style.paddingRight
+  const sw = window.innerWidth - document.documentElement.clientWidth
+  if (sw > 0) document.body.style.paddingRight = `${sw}px`
+  document.body.style.position = 'fixed'
+  document.body.style.top = `-${lockedScrollY}px`
+  document.body.style.width = '100%'
+  document.body.style.overflow = 'hidden'
+  document.body.classList.add('scroll-locked')
+  window.addEventListener('wheel', onWheel, { passive: false })
+  window.addEventListener('touchmove', onTouch, { passive: false })
+  window.addEventListener('keydown', onKey, { passive: false })
+  window.addEventListener('scroll', onScroll, { passive: false })
+}
+
+const unlockScroll = () => {
+  if (lockCount === 0) return
+  lockCount--
+  if (lockCount > 0) return
+  window.removeEventListener('wheel', onWheel as EventListener)
+  window.removeEventListener('touchmove', onTouch as EventListener)
+  window.removeEventListener('keydown', onKey as EventListener)
+  window.removeEventListener('scroll', onScroll as EventListener)
+  document.body.classList.remove('scroll-locked')
+  document.body.style.position = prevPosition
+  document.body.style.top = prevTop
+  document.body.style.width = prevWidth
+  document.body.style.overflow = prevOverflow
+  document.body.style.paddingRight = prevPaddingRight
+  window.scrollTo(0, lockedScrollY)
+}
 
 const getParticleStyle = (n: number) => {
   const delay = Math.random() * -10
@@ -65,13 +117,17 @@ const getParticleStyle = (n: number) => {
 }
 
 onMounted(() => {
-  // Sequence of animations
+  lockScroll()
   setTimeout(() => {
     isFinished.value = true
     setTimeout(() => {
       emit('finished')
     }, 2000) // Slow, luxurious fade out
   }, 5500) 
+})
+
+onUnmounted(() => {
+  unlockScroll()
 })
 </script>
 
