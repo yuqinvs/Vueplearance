@@ -274,4 +274,11 @@ onMounted(() => {
     letter-spacing: -0.02em; /* Match .heading-hero exactly */
   }
 }
+
+/* Mobile alignment to match Home.vue hero height */
+@media (max-width: 768px) {
+  .runway-container {
+    height: 80vh;
+  }
+}
 </style>
