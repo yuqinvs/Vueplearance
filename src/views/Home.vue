@@ -294,7 +294,12 @@ blockquote {
 
 @media (max-width: 768px) {
   .hero-minimal {
-    min-height: 80vh;
+    min-height: 100vh;
+    min-height: 100svh;
+    min-height: 100lvh;
+    min-height: 100dvh;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
   }
   
   .hero-image-bg,

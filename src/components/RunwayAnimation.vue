@@ -1,5 +1,5 @@
 <template>
-  <div class="runway-container" :class="{ 'fade-out': isFinished }">
+  <div class="runway-container" :class="{ 'fade-out': isFinished, 'low-end': isLowEndDevice }">
     <!-- Film Grain / Noise Overlay -->
     <div class="noise-overlay"></div>
     
@@ -13,7 +13,7 @@
 
     <!-- Floating Dust Particles -->
     <div class="particles-container">
-      <div v-for="n in 30" :key="n" class="dust-mote" :style="getParticleStyle(n)"></div>
+      <div v-for="n in particleCount" :key="n" class="dust-mote" :style="getParticleStyle(n)"></div>
     </div>
     
     <!-- Replicate Home.vue hero structure for perfect alignment -->
@@ -37,6 +37,11 @@ import translations from '@/locales/translations'
 
 const emit = defineEmits(['finished'])
 const isFinished = ref(false)
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+const hardwareConcurrency = navigator.hardwareConcurrency || 2
+const deviceMemory = (navigator as any).deviceMemory || 2
+const isLowEndDevice = prefersReducedMotion || hardwareConcurrency <= 4 || deviceMemory <= 2
+const particleCount = isLowEndDevice ? 12 : 30
 const languageStore = useLanguageStore()
 const t = computed(() => translations[languageStore.currentLanguage])
 
@@ -73,10 +78,12 @@ onMounted(() => {
 <style scoped>
 .runway-container {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100vw;
   height: 100vh;
+  height: 100svh;
+  height: 100lvh;
+  height: 100dvh;
   background-color: #020202; /* Almost pure black */
   z-index: 9999;
   display: flex;
@@ -85,6 +92,10 @@ onMounted(() => {
   overflow: hidden;
   transition: opacity 2s cubic-bezier(0.22, 1, 0.36, 1); /* Custom ease-out */
   perspective: 1000px;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  contain: layout paint;
 }
 
 .runway-container.fade-out {
@@ -116,6 +127,7 @@ onMounted(() => {
   height: 150%;
   pointer-events: none;
   z-index: 1;
+  will-change: transform, opacity;
 }
 
 .beam-cone {
@@ -135,6 +147,8 @@ onMounted(() => {
   mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
   opacity: 0;
+  will-change: transform, opacity;
+  transform: translateZ(0);
 }
 
 /* Haze Layer - Wide and soft */
@@ -183,6 +197,8 @@ onMounted(() => {
   filter: blur(20px);
   opacity: 0;
   animation: spotReveal 5s ease-out 0.5s forwards;
+  will-change: transform, opacity;
+  transform: translateZ(0);
 }
 
 /* Content */
@@ -190,6 +206,8 @@ onMounted(() => {
   text-align: center;
   z-index: 10;
   position: relative;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .spacer-text {
@@ -278,7 +296,35 @@ onMounted(() => {
 /* Mobile alignment to match Home.vue hero height */
 @media (max-width: 768px) {
   .runway-container {
-    height: 80vh;
+    height: 100vh;
+    height: 100svh;
+    height: 100lvh;
+    height: 100dvh;
+  }
+}
+
+/* Landscape tweaks */
+@media (orientation: landscape) and (max-width: 1024px) {
+  .floor-spot {
+    top: 55%;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .beam-cone,
+  .beam-haze,
+  .beam-glow,
+  .beam-core,
+  .floor-spot,
+  .brand-text {
+    animation: none !important;
+    opacity: 1;
+    filter: none;
+    transform: none;
   }
 }
 </style>
+.low-end .noise-overlay {
+  display: none;
+}
