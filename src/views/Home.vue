@@ -1,5 +1,6 @@
 <template>
   <div class="home-minimal">
+    <RunwayAnimation v-if="showAnimation" @finished="onAnimationFinished" />
     <!-- Hero Section -->
     <section class="hero-minimal">
       <div class="hero-content fade-in">
@@ -128,13 +129,19 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted, computed } from 'vue'
+import { onMounted, onUnmounted, computed, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import { useLanguageStore } from '@/stores/language'
 import translations from '@/locales/translations'
+import RunwayAnimation from '@/components/RunwayAnimation.vue'
 
 const languageStore = useLanguageStore()
 const t = computed(() => translations[languageStore.currentLanguage])
+const showAnimation = ref(false)
+
+const onAnimationFinished = () => {
+  showAnimation.value = false
+}
 
 // Scroll animation handler
 const handleScroll = () => {
@@ -163,6 +170,9 @@ const handleParallax = () => {
 }
 
 onMounted(() => {
+  // Always show animation
+  showAnimation.value = true
+  
   window.addEventListener('scroll', handleScroll)
   window.addEventListener('scroll', handleParallax)
   
